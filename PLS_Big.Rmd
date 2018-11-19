@@ -1,0 +1,372 @@
+---
+title: "Big Data?"
+author: "Aldo Solari"
+date: "20 Novembre, 2018"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = T, eval=T, message=F, warning=F, error=F, comment=NA, cache=F, R.options=list(width=220))
+```
+
+# Benvenuti!
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/it/a/a2/Logo_Universit%C3%A0_Milano-Bicocca.jpg")
+```
+
+---
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '30%', out.height = '30%'}
+knitr::include_graphics("http://divini.gov.it/wp-content/uploads/2016/04/Logo_PLS_scritte_nere.png")
+```
+
+Quest'anno il gruppo di lavoro __PLS - Statistica__
+
+* Prof.ssa Laura Terzera
+
+* Prof. Aldo Solari
+
+* Dott. Roberto Boselli
+
+ha pensato di proporre un __corso di formazione per gli insegnanti__ sul tema:
+
+*Come sopravvivere all'esplosione dei dati.*  <br>
+*Tecniche e strumenti per l'analisi dei Big Data.*
+
+
+---
+
+# Calendario
+
+* __20 Novembre 2018__ - Prof. Aldo Solari <br>
+*10:30-13:30* Introduzione al tema dei Big Data
+
+
+* __26 Novembre 2018__ - Ing. Matteo Fontana <br>
+*10:30-13:30* La visualizzazione di Big Data <br>
+*14:30-17:30* Laboratorio Tableau 
+
+* __28 Novembre 2018__ - Dott. Roberto Boselli <br>
+*10:30-13:30* Trattamento dati non strutturati di tipo testuale  <br>
+*14:30-17:30* Laboratorio Rapidminer Studio 
+
+---
+
+# Il tema di oggi
+
+| Inizio | Fine  | Argomenti |
+|---|---|---|
+| 10:30 | 12:00 | Un diluvio di dati | 
+| | | Quando i dati diventano Big? | 
+| | | Una varietà di dati | 
+| | | Cosa si può fare con i Big Data? |
+| | | La Statistica e i Big Data |
+| 12:00 | 12:15 | PAUSA |
+| 12:15 | 13:00 | Un paradiso o un paradosso? | 
+| | | Google e l'influenza | 
+| | | Le neuroscienze e il salmone |
+
+
+Tutto il materiale è disponibile all'indirizzo [https://aldosolari.github.io/PLS/](https://aldosolari.github.io/PLS/)
+
+---
+
+class: inverse, center, middle
+
+# Un diluvio di dati
+
+---
+
+
+# Un diluvio di dati
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '50%', out.height = '50%'}
+knitr::include_graphics("http://itmonitor.zenoss.com/wp-content/uploads/2013/05/DataDeluge.jpg")
+```
+
+.center[Image credit: [The Economist](https://www.economist.com/leaders/2010/02/25/the-data-deluge), 25 Febbraio 2010]
+
+---
+
+# Ogni minuto 
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://www.aldociana.it/wp-content/uploads/2018/01/web-minuto.jpg")
+```
+
+
+---
+
+
+# Il nuovo petrolio
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '75%', out.height = '75%'}
+knitr::include_graphics("https://www.economist.com/sites/default/files/images/print-edition/20170506_LDD001_0.jpg")
+```
+
+.center[Image credit: [The Economist](https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data), 6 Maggio 2017]
+
+
+
+> La risorsa di più alto valore al mondo non è più il petrolio, sono i dati
+
+
+---
+
+# Big
+
+
+Quando qualcosa è importante, diventa __Big__:
+
+  * __Big Bang__, lo scoppio primordiale che ha dato origine all’universo
+    
+  * __Big Mac__, l’hamburger a doppio strato che delizia gli americani dal 1967
+    
+  * ...
+    
+  * __Big Data__ ?
+
+---
+class: inverse, center, middle
+
+# Quando i dati diventano Big Data?
+
+---
+
+#  E' solo una questione di dimensioni?
+
+
+| Nome | Simbolo | Byte | 
+|---|---|---|
+| kilobyte | kB | $2^{10} = 1024 \approx 1000$	|
+| megabyte |	MB |	$1000^2$	|
+| gigabyte |	GB |	$1000^3$	|
+| terabyte |	TB |	$1000^4$	|
+| petabyte |	PB |	$1000^5$ |
+| exabyte	| EB	| $1000^6$ |
+| zettabyte |	ZB |	$1000^7$ |
+| yottabyte |	YB |	$1000^8$ |
+
+---
+
+# Definizione classica: le 3 V
+
+* __Volume__ (*Volume*) la dimensione dei dati: quanto grandi?
+
+* __Velocità__ (*Velocity*) il flusso di dati: quanti dati al secondo?
+
+* __Varietà__ (*Variety*) la natura dei dati: in quanti formati? testo, immagini, audio, video etc.
+
+In seguito sono state introdotte una quarta e una quinta V
+
+* __Veridicità__ (*Veracity*), ovvero la qualità dei dati acquisiti
+
+* __Valore__ (*Value*)
+
+---
+
+# Le 4 V
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://www.ibmbigdatahub.com/sites/default/files/styles/xlarge-scaled/public/infographic_image/4-Vs-of-big-data.jpg?itok=4syrvSLX")
+```
+
+.center[Image credit: [IBM Big Data & Analytics Hub](https://www.ibmbigdatahub.com/infographic/four-vs-big-data)]
+
+
+---
+
+# La quinta V
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '30%', out.height = '30%'}
+knitr::include_graphics("https://www.ibmbigdatahub.com/sites/default/files/styles/xlarge-scaled/public/4vs_infographic_final.jpg?itok=XYAq_lSF")
+```
+
+.center[Image credit: [IBM Big Data & Analytics Hub](https://www.ibmbigdatahub.com/infographic/extracting-business-value-4-vs-big-data)]
+
+
+---
+
+# Definizione da Wikipedia
+
+> Big data is a term used to refer to data sets that are __too large or complex__ for traditional data-processing applications software to adequately deal with.
+
+> ...
+
+> What qualifies as being "big data" __varies__ depending on the capabilities of the users and their tools, and expanding capabilities make big data a __moving target__ ...
+
+---
+
+# Definizione relativa
+
+> Big data is when your workflow breaks - Randall Pruim
+
+Per esempio, il mio flusso di lavoro si interrompe se
+
+* la dimensione del dataset è troppo grande per il mio portatile 
+
+* il flusso dei dati è troppo veloce da processare e analizzare
+
+* i dati sono di diversa natura e provengono da diverse sorgenti
+
+* etc.
+
+---
+
+# Definizione provocatoria
+
+![](https://www.unbelievable-machine.com/en/wp-content/uploads/sites/3/2016/03/TUM-PM66-Teenage-2.jpg)
+
+---
+
+
+# Big hype?
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '75%', out.height = '75%'}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Gartner_Hype_Cycle.svg/330px-Gartner_Hype_Cycle.svg.png")
+```
+
+.center[Image credit: Hype Cycle di Gartner da [Wikipedia](https://it.wikipedia.org/wiki/Hype_cycle)]
+
+---
+
+# Hype Cycle di Gartner
+
+1. Innesco della tecnologia
+
+2. Picco delle aspettative esagerate
+
+3. Depressione della disillusione
+
+4. Salita dell'illuminazione
+
+5. Altopiano della produttività
+
+Dove ci troviamo ora?
+
+---
+
+# Grande successo o grande fallimento?
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '75%', out.height = '75%'}
+knitr::include_graphics("https://media.wired.com/photos/5a6bb01fe9c86f511f5e79d6/master/pass/pb_theory_f.jpg
+")
+```
+
+.center[Image credit: [Wired](https://www.wired.com/2008/06/pb-theory/), 23 Giugno 2008]
+
+> The data deluge makes the scientific method — hypothesize, model, test — obsolete.
+
+> Petabytes allow us to say: "Correlation is enough." We can stop looking for models. We can analyze the data without hypotheses about what it might show. We can throw the numbers into the biggest computing clusters the world has ever seen and let statistical algorithms find patterns where science cannot. 
+
+> Chris Anderson
+
+---
+
+# Grande successo o grande fallimento?
+
+* 14 Marzo 2014, Lazer et al. per __Science__ :  *The Parable of Google Flu: Traps in Big Data Analysis*
+
+* 28 Marzo 2014, Tim Harford  per __Financial Times__ : *Big data: are we making a big mistake?*
+
+* 3 Novembre 2014, Howard Baldwin per __Forbes__ : *Big Data Is Big, But It's Not That Powerful*
+
+* 18 Ottobre 2017, Alastair Dryburgh per __Forbes__ : *Big Data: Insights Or Illusions?*
+
+* 15 Novembre 2018, Joe Harpaz per __Forbes__ :
+*Why You Should Care About Big Data This Flu Season* 
+
+* 16 Novembre 2018, Alex Robbio per __Forbes__ : *Are We Nearing The End Of Hadoop And Big Data?*
+
+---
+class: inverse, center, middle
+
+# Analisi dei Big Data 
+
+---
+
+# Analisi dei Big Data 
+
+> Big Data is not about the data!
+
+> The Value in Big Data: the Analytics
+
+> Gary King, 2013
+
+
+
+---
+
+# Big Data vs Machine Learning
+
+```{r, echo=FALSE}
+library(gtrendsR)
+res <- gtrends(keyword = c("Big Data", "Machine Learning"), geo = "", time="all")
+plot(res)
+```
+
+---
+
+# Machine Learning & AI
+
+Qual è la differenza fra Machine Learning (apprendimento automatico) e Intelligenza Artificiale?
+
+* L'intelligenza artificiale è il concetto più ampio di macchine in grado di svolgere compiti in un modo che considereremmo "intelligenti"
+
+
+* Machine Learning è un'applicazione corrente dell'intelligenza artificiale basata sull'idea che dovremmo davvero essere in grado di dare alle macchine l'accesso ai dati e lasciarli imparare da soli
+
+---
+
+# Examples of what's now possible
+
+---
+
+
+# 1997 - IBM Deep Blue
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '75%', out.height = '75%'}
+knitr::include_graphics("https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA5Mi8xNTYvb3JpZ2luYWwvZ2Fycnkta2FzcGFyb3YtdnMtZGVlcC1ibHVlLmpwZWc=")
+```
+
+---
+
+# 2011 - IBM Watson plays Jeopardy!
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://www.informazionesenzafiltro.it/wp-content/uploads/2016/03/ibm-watson.jpg")
+```
+
+---
+
+# 2013 - Google Deepmind Atari Project
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/E-YinrqWMvs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+#  2016 - Google Deepmind AlphaGo
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://filmperevolvere.it/wp-content/uploads/2018/01/ezgif-4-dafa365d79.jpg
+")
+```
+
+---
+
+# Deep Learning
+
+* A differenza di Deep Blue o Watson di IBM, che sono stati sviluppati per uno scopo predefinito, DeepMind apprende dai dati
+
+* Tecnicamente utilizza una __rete neurale convoluzionale__ con Q-learning, una forma di *reinforcement learning*
+
+* Senza alterare il codice, DeepMind può imparare altri compiti: è un __general-purpose algorithm__ 
+
+

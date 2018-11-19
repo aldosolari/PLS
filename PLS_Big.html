@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Big Data?</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Aldo Solari" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Big Data?
+### Aldo Solari
+### 20 Novembre, 2018
+
+---
+
+
+
+
+# Benvenuti!
+
+&lt;img src="https://upload.wikimedia.org/wikipedia/it/a/a2/Logo_Universit%C3%A0_Milano-Bicocca.jpg" width="25%" height="25%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="http://divini.gov.it/wp-content/uploads/2016/04/Logo_PLS_scritte_nere.png" width="30%" height="30%" style="display: block; margin: auto;" /&gt;
+
+Quest'anno il gruppo di lavoro __PLS - Statistica__
+
+* Prof.ssa Laura Terzera
+
+* Prof. Aldo Solari
+
+* Dott. Roberto Boselli
+
+ha pensato di proporre un __corso di formazione per gli insegnanti__ sul tema:
+
+*Come sopravvivere all'esplosione dei dati.*  &lt;br&gt;
+*Tecniche e strumenti per l'analisi dei Big Data.*
+
+
+---
+
+# Calendario
+
+* __20 Novembre 2018__ - Prof. Aldo Solari &lt;br&gt;
+*10:30-13:30* Introduzione al tema dei Big Data
+
+
+* __26 Novembre 2018__ - Ing. Matteo Fontana &lt;br&gt;
+*10:30-13:30* La visualizzazione di Big Data &lt;br&gt;
+*14:30-17:30* Laboratorio Tableau 
+
+* __28 Novembre 2018__ - Dott. Roberto Boselli &lt;br&gt;
+*10:30-13:30* Trattamento dati non strutturati di tipo testuale  &lt;br&gt;
+*14:30-17:30* Laboratorio Rapidminer Studio 
+
+---
+
+# Il tema di oggi
+
+| Inizio | Fine  | Argomenti |
+|---|---|---|
+| 10:30 | 12:00 | Un diluvio di dati | 
+| | | Quando i dati diventano Big? | 
+| | | Una varietà di dati | 
+| | | Cosa si può fare con i Big Data? |
+| | | La Statistica e i Big Data |
+| 12:00 | 12:15 | PAUSA |
+| 12:15 | 13:00 | Un paradiso o un paradosso? | 
+| | | Google e l'influenza | 
+| | | Le neuroscienze e il salmone |
+
+
+Tutto il materiale è disponibile all'indirizzo [https://aldosolari.github.io/PLS/](https://aldosolari.github.io/PLS/)
+
+---
+
+class: inverse, center, middle
+
+# Un diluvio di dati
+
+---
+
+
+# Un diluvio di dati
+
+&lt;img src="http://itmonitor.zenoss.com/wp-content/uploads/2013/05/DataDeluge.jpg" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: [The Economist](https://www.economist.com/leaders/2010/02/25/the-data-deluge), 25 Febbraio 2010]
+
+---
+
+# Ogni minuto 
+
+&lt;img src="https://www.aldociana.it/wp-content/uploads/2018/01/web-minuto.jpg" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+# Il nuovo petrolio
+
+&lt;img src="https://www.economist.com/sites/default/files/images/print-edition/20170506_LDD001_0.jpg" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: [The Economist](https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data), 6 Maggio 2017]
+
+
+
+&gt; La risorsa di più alto valore al mondo non è più il petrolio, sono i dati
+
+
+---
+
+# Big
+
+
+Quando qualcosa è importante, diventa __Big__:
+
+  * __Big Bang__, lo scoppio primordiale che ha dato origine all’universo
+    
+  * __Big Mac__, l’hamburger a doppio strato che delizia gli americani dal 1967
+    
+  * ...
+    
+  * __Big Data__ ?
+
+---
+class: inverse, center, middle
+
+# Quando i dati diventano Big Data?
+
+---
+
+#  E' solo una questione di dimensioni?
+
+
+| Nome | Simbolo | Byte | 
+|---|---|---|
+| kilobyte | kB | `\(2^{10} = 1024 \approx 1000\)`	|
+| megabyte |	MB |	`\(1000^2\)`	|
+| gigabyte |	GB |	`\(1000^3\)`	|
+| terabyte |	TB |	`\(1000^4\)`	|
+| petabyte |	PB |	`\(1000^5\)` |
+| exabyte	| EB	| `\(1000^6\)` |
+| zettabyte |	ZB |	`\(1000^7\)` |
+| yottabyte |	YB |	`\(1000^8\)` |
+
+---
+
+# Definizione classica: le 3 V
+
+* __Volume__ (*Volume*) la dimensione dei dati: quanto grandi?
+
+* __Velocità__ (*Velocity*) il flusso di dati: quanti dati al secondo?
+
+* __Varietà__ (*Variety*) la natura dei dati: in quanti formati? testo, immagini, audio, video etc.
+
+In seguito sono state introdotte una quarta e una quinta V
+
+* __Veridicità__ (*Veracity*), ovvero la qualità dei dati acquisiti
+
+* __Valore__ (*Value*)
+
+---
+
+# Le 4 V
+
+&lt;img src="https://www.ibmbigdatahub.com/sites/default/files/styles/xlarge-scaled/public/infographic_image/4-Vs-of-big-data.jpg?itok=4syrvSLX" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: [IBM Big Data &amp; Analytics Hub](https://www.ibmbigdatahub.com/infographic/four-vs-big-data)]
+
+
+---
+
+# La quinta V
+
+&lt;img src="https://www.ibmbigdatahub.com/sites/default/files/styles/xlarge-scaled/public/4vs_infographic_final.jpg?itok=XYAq_lSF" width="30%" height="30%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: [IBM Big Data &amp; Analytics Hub](https://www.ibmbigdatahub.com/infographic/extracting-business-value-4-vs-big-data)]
+
+
+---
+
+# Definizione da Wikipedia
+
+&gt; Big data is a term used to refer to data sets that are __too large or complex__ for traditional data-processing applications software to adequately deal with.
+
+&gt; ...
+
+&gt; What qualifies as being "big data" __varies__ depending on the capabilities of the users and their tools, and expanding capabilities make big data a __moving target__ ...
+
+---
+
+# Definizione relativa
+
+&gt; Big data is when your workflow breaks - Randall Pruim
+
+Per esempio, il mio flusso di lavoro si interrompe se
+
+* la dimensione del dataset è troppo grande per il mio portatile 
+
+* il flusso dei dati è troppo veloce da processare e analizzare
+
+* i dati sono di diversa natura e provengono da diverse sorgenti
+
+* etc.
+
+---
+
+# Definizione provocatoria
+
+![](https://www.unbelievable-machine.com/en/wp-content/uploads/sites/3/2016/03/TUM-PM66-Teenage-2.jpg)
+
+---
+
+
+# Big hype?
+
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Gartner_Hype_Cycle.svg/330px-Gartner_Hype_Cycle.svg.png" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: Hype Cycle di Gartner da [Wikipedia](https://it.wikipedia.org/wiki/Hype_cycle)]
+
+---
+
+# Hype Cycle di Gartner
+
+1. Innesco della tecnologia
+
+2. Picco delle aspettative esagerate
+
+3. Depressione della disillusione
+
+4. Salita dell'illuminazione
+
+5. Altopiano della produttività
+
+Dove ci troviamo ora?
+
+---
+
+# Grande successo o grande fallimento?
+
+&lt;img src="https://media.wired.com/photos/5a6bb01fe9c86f511f5e79d6/master/pass/pb_theory_f.jpg
+" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: [Wired](https://www.wired.com/2008/06/pb-theory/), 23 Giugno 2008]
+
+&gt; The data deluge makes the scientific method — hypothesize, model, test — obsolete.
+
+&gt; Petabytes allow us to say: "Correlation is enough." We can stop looking for models. We can analyze the data without hypotheses about what it might show. We can throw the numbers into the biggest computing clusters the world has ever seen and let statistical algorithms find patterns where science cannot. 
+
+&gt; Chris Anderson
+
+---
+
+# Grande successo o grande fallimento?
+
+* 14 Marzo 2014, Lazer et al. per __Science__ :  *The Parable of Google Flu: Traps in Big Data Analysis*
+
+* 28 Marzo 2014, Tim Harford  per __Financial Times__ : *Big data: are we making a big mistake?*
+
+* 3 Novembre 2014, Howard Baldwin per __Forbes__ : *Big Data Is Big, But It's Not That Powerful*
+
+* 18 Ottobre 2017, Alastair Dryburgh per __Forbes__ : *Big Data: Insights Or Illusions?*
+
+* 15 Novembre 2018, Joe Harpaz per __Forbes__ :
+*Why You Should Care About Big Data This Flu Season* 
+
+* 16 Novembre 2018, Alex Robbio per __Forbes__ : *Are We Nearing The End Of Hadoop And Big Data?*
+
+---
+class: inverse, center, middle
+
+# Analisi dei Big Data 
+
+---
+
+# Analisi dei Big Data 
+
+&gt; Big Data is not about the data!
+
+&gt; The Value in Big Data: the Analytics
+
+&gt; Gary King, 2013
+
+
+
+---
+
+# Big Data vs Machine Learning
+
+![](PLS_Big_files/figure-html/unnamed-chunk-10-1.png)&lt;!-- --&gt;
+
+---
+
+# Machine Learning &amp; AI
+
+Qual è la differenza fra Machine Learning (apprendimento automatico) e Intelligenza Artificiale?
+
+* L'intelligenza artificiale è il concetto più ampio di macchine in grado di svolgere compiti in un modo che considereremmo "intelligenti"
+
+
+* Machine Learning è un'applicazione corrente dell'intelligenza artificiale basata sull'idea che dovremmo davvero essere in grado di dare alle macchine l'accesso ai dati e lasciarli imparare da soli
+
+---
+
+# Examples of what's now possible
+
+---
+
+
+# 1997 - IBM Deep Blue
+
+&lt;img src="https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA5Mi8xNTYvb3JpZ2luYWwvZ2Fycnkta2FzcGFyb3YtdnMtZGVlcC1ibHVlLmpwZWc=" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# 2011 - IBM Watson plays Jeopardy!
+
+&lt;img src="https://www.informazionesenzafiltro.it/wp-content/uploads/2016/03/ibm-watson.jpg" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# 2013 - Google Deepmind Atari Project
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/E-YinrqWMvs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+#  2016 - Google Deepmind AlphaGo
+
+&lt;img src="https://filmperevolvere.it/wp-content/uploads/2018/01/ezgif-4-dafa365d79.jpg
+" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Deep Learning
+
+* A differenza di Deep Blue o Watson di IBM, che sono stati sviluppati per uno scopo predefinito, DeepMind apprende dai dati
+
+* Tecnicamente utilizza una __rete neurale convoluzionale__ con Q-learning, una forma di *reinforcement learning*
+
+* Senza alterare il codice, DeepMind può imparare altri compiti: è un __general-purpose algorithm__
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
