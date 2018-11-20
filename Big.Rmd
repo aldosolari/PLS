@@ -67,7 +67,7 @@ ha pensato di proporre un __corso di formazione per gli insegnanti__ sul tema:
 | | | Cosa sono i Big Data? | 
 | | | A cosa servono i Big Data? |
 | | | Grandi varietà |
-| | | Big Data & Machine learning | 
+| | | Rise of the machines | 
 | 12:00 | 12:15 | PAUSA |
 | 12:15 | 13:00 | Un paradiso o un paradosso? | 
 | | | Conclusioni |
@@ -517,7 +517,7 @@ Per un confronto fra paesi europei si veda questo [post](http://paulelvers.com/p
 
 class: inverse, center, middle
 
-# Big Data & Machine Learning
+# Rise of the machines
 
 ---
 
@@ -774,6 +774,32 @@ knitr::include_graphics("https://www.economist.com/sites/default/files/imagecach
 # Studi scientifici?
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0Rnq1NpHdmw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+# Un nuovo paradigma
+
+__Tradizionale__
+
+1. Formulare le ipotesi/modelli/domande (sulla base di conoscenze pregresse)
+
+2. Raccogliere i dati
+
+3. Rispondere alle domande (inferenza)
+
+
+__Nuovo__
+
+
+1. Raccogliere i dati
+
+2. Formulare le ipotesi/modelli/domande (sulla base dei dati)
+
+3. Rispondere alle domande (inferenza)
+
+
+
+
 
 ---
 
