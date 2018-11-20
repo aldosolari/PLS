@@ -65,8 +65,8 @@ ha pensato di proporre un __corso di formazione per gli insegnanti__ sul tema:
 |---|---|---|
 | 10:30 | 12:00 | Un diluvio di dati | 
 | | | Cosa sono i Big Data? | 
-| | | Grandi varietà |
 | | | A cosa servono i Big Data? |
+| | | Grandi varietà |
 | | | Big Data & Machine learning | 
 | 12:00 | 12:15 | PAUSA |
 | 12:15 | 13:00 | Un paradiso o un paradosso? | 
@@ -233,12 +233,6 @@ class: inverse, center, middle
 
 ---
 
-# Grafico interattivo
-
-[How Big is Big Data?](https://www.bloomberg.com/graphics/2014-fix-this-big-data/)
-
----
-
 # Tipologie di dati
 
 I Big Data possono essere 
@@ -314,14 +308,97 @@ registrare eventi e situazioni nel mondo fisico
 
 ---
 
-# Ieri e oggi
+# Dati alti e grassi
 
-|  | Ieri | Oggi |
-|---|---|---|
-| Opinioni | Centinaia di interviste | Miliardi di post sui social media |
-| Salute |  Quante volte ti sei esercitato nell'ultima settimana? | Accelerometri nei telefoni cellulari |
-| Relazioni sociali | Chi sono i tuoi migliori 5 amici? | Registrazione continua di telefonate, e-mail, messaggi, connessioni social media |
-| Paesi in via di sviluppo | Statistiche governative dubbie o inesistenti | Immagini satellitari della luce generata di notte, delle reti stradali |
+Possiamo pensare ai dati come ad una matrice $n\times p$
+
+* Big $n$: dati "alti"
+
+* Big $p$: dati "grassi"
+
+Il rapporto
+$$\frac{n}{p}$$
+
+può essere interpretato come una misura della dimensione effettiva
+
+[How Big is Big Data?](https://www.bloomberg.com/graphics/2014-fix-this-big-data/)
+
+---
+
+# Da Fisher ...
+
+```{r, echo=FALSE}
+knitr::kable(head(iris), format = "html")
+```
+
+---
+
+# ... a Netflix
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("http://growthmedia.ca/wp-content/uploads/2017/04/lessons-learned-from-building-machine-learning-software-at-netflix.jpg")
+```
+
+---
+
+# ... fino alla Genomica
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://simonsfoundation.imgix.net/wp-content/uploads/sites/2/2015/12/22175530/wholeGenome2440.jpg?auto=format&w=1220&q=90")
+```
+
+---
+
+# GATTACA - 1997
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '30%', out.height = '30%'}
+knitr::include_graphics("https://images-na.ssl-images-amazon.com/images/I/71CruJN2sfL._RI_SX200_.jpg")
+```
+
+__Trama__ : In un prossimo futuro è possibile far nascere esseri umani con un corredo genetico praticamente perfetto
+
+---
+
+
+class: inverse, center, middle
+
+# A cosa servono i Big Data?
+
+---
+
+# A cosa servono i Big Data?
+
+__Personalizzazione__ : la soluzione "giusta" per te si basa su dati di persone "come" te
+
+* Marketing personalizzato
+
+* Medicina personalizzata
+
+* etc.
+
+
+---
+
+# Il valore dei Big Data
+
+
+> Big Data is not about the data!
+
+> The Value in Big Data: the Analytics
+
+> Gary King, 2013
+
+---
+
+# La scienza dei dati
+
+
+> The key word in "Data Science" is not Data, it is Science
+
+> Jeff Leek 
+
+Data Science è utile solo quando i dati vengono utilizzati per rispondere a
+domanda scientifiche
 
 ---
 
@@ -435,45 +512,6 @@ Per un confronto fra paesi europei si veda questo [post](http://paulelvers.com/p
 # Dati network: #BankTransferDay
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XX9he5lkNSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
----
-
-# Dati genetici: the Human Genome Project
-
-
-```{r, echo=FALSE, fig.align = 'center', out.width = '60%', out.height = '60%'}
-knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Karyotype.png/260px-Karyotype.png")
-```
-
----
-
-class: inverse, center, middle
-
-# A cosa servono i Big Data?
-
----
-
-# A cosa servono i Big Data?
-
-__Personalizzazione__ : la soluzione "giusta" per te si basa su dati di persone "come" te
-
-* Marketing personalizzato
-
-* Medicina personalizzata
-
-* etc.
-
-
----
-
-# Il valore dei Big Data
-
-
-> Big Data is not about the data!
-
-> The Value in Big Data: the Analytics
-
-> Gary King, 2013
 
 ---
 
