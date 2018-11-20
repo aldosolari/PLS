@@ -66,7 +66,7 @@ ha pensato di proporre un __corso di formazione per gli insegnanti__ sul tema:
 | 10:30 | 12:00 | Un diluvio di dati | 
 | | | Cosa sono i Big Data? | 
 | | | Grandi varietà |
-| | | A cosa ti servono i Big Data? |
+| | | A cosa servono i Big Data? |
 | | | Big Data & Machine learning | 
 | 12:00 | 12:15 | PAUSA |
 | 12:15 | 13:00 | Un paradiso o un paradosso? | 
@@ -449,11 +449,11 @@ knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/b/
 
 class: inverse, center, middle
 
-# A cosa ti servono i Big Data?
+# A cosa servono i Big Data?
 
 ---
 
-# A cosa ti servono i Big Data?
+# A cosa servono i Big Data?
 
 __Personalizzazione__ : la soluzione "giusta" per te si basa su dati di persone "come" te
 
@@ -561,11 +561,43 @@ il Teorema del limite centrale richiedono grandi campioni
 
 ---
 
+# Big Data > Metodo Scientifico?
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '75%', out.height = '75%'}
+knitr::include_graphics("https://media.wired.com/photos/5a6bb01fe9c86f511f5e79d6/master/pass/pb_theory_f.jpg
+")
+```
+
+.center[Image credit: [Wired](https://www.wired.com/2008/06/pb-theory/), 23 Giugno 2008]
+
+> The data deluge makes the scientific method — hypothesize, model, test — obsolete.
+
+> Petabytes allow us to say: "Correlation is enough." We can stop looking for models. We can analyze the data without hypotheses about what it might show. We can throw the numbers into the biggest computing clusters the world has ever seen and let statistical algorithms find patterns where science cannot. 
+
+> Chris Anderson
+
+---
+
 # Il paradosso
 
 > The bigger the data, the surer we fool ourselves - X.L. Meng
 
 Più grandi sono i dati, più facile ingannarsi
+
+---
+
+# Le insidie
+
+* 14 Marzo 2014, Lazer et al. per __Science__ :  *The Parable of Google Flu: Traps in Big Data Analysis*
+
+* 28 Marzo 2014, Tim Harford  per __Financial Times__ : *Big data: are we making a big mistake?*
+
+* 3 Novembre 2014, Howard Baldwin per __Forbes__ : *Big Data Is Big, But It's Not That Powerful*
+
+* 18 Ottobre 2017, Alastair Dryburgh per __Forbes__ : *Big Data: Insights Or Illusions?*
+
+* 16 Novembre 2018, Alex Robbio per __Forbes__ : *Are We Nearing The End Of Hadoop And Big Data?*
+
 
 ---
 
@@ -722,37 +754,6 @@ class: inverse, center, middle
 
 ---
 
-# Grande successo o grande fallimento?
-
-```{r, echo=FALSE, fig.align = 'center', out.width = '75%', out.height = '75%'}
-knitr::include_graphics("https://media.wired.com/photos/5a6bb01fe9c86f511f5e79d6/master/pass/pb_theory_f.jpg
-")
-```
-
-.center[Image credit: [Wired](https://www.wired.com/2008/06/pb-theory/), 23 Giugno 2008]
-
-> The data deluge makes the scientific method — hypothesize, model, test — obsolete.
-
-> Petabytes allow us to say: "Correlation is enough." We can stop looking for models. We can analyze the data without hypotheses about what it might show. We can throw the numbers into the biggest computing clusters the world has ever seen and let statistical algorithms find patterns where science cannot. 
-
-> Chris Anderson
-
----
-
-# Grande successo o grande fallimento?
-
-* 14 Marzo 2014, Lazer et al. per __Science__ :  *The Parable of Google Flu: Traps in Big Data Analysis*
-
-* 28 Marzo 2014, Tim Harford  per __Financial Times__ : *Big data: are we making a big mistake?*
-
-* 3 Novembre 2014, Howard Baldwin per __Forbes__ : *Big Data Is Big, But It's Not That Powerful*
-
-* 18 Ottobre 2017, Alastair Dryburgh per __Forbes__ : *Big Data: Insights Or Illusions?*
-
-* 16 Novembre 2018, Alex Robbio per __Forbes__ : *Are We Nearing The End Of Hadoop And Big Data?*
-
-
----
 
 # Big hype?
 
