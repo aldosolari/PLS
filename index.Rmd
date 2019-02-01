@@ -3,10 +3,15 @@ title: "Piano Lauree Scientifiche"
 description: |
   **Laboratorio di Statistica**, Università degli Studi di Milano-Bicocca 
 author:
-  - name: Aldo Solari
+  - name: Aldo Solari (ideatore)
     url: https://aldosolari.github.io/
     affiliation: DEMS
     affiliation_url: https://www.unimib.it/ateneo/dipartimenti-e-scuole/alla-scoperta-%E2%80%A6/dipartimento-economia-metodi-quantitativi-e-strategie-impresa
+  - name: Laura Terzera
+    affiliation: DISMEQ
+    affiliation_url: https://www.dismeq.unimib.it/it
+  - name: Stefano Barberis, Alice Giampino, Luca Danese, Pietro Meoni, Samuele Cassinari
+    affiliation: Tutor
 date: "`r Sys.Date()`"
 output:
   radix::radix_article:
@@ -59,6 +64,19 @@ Tutti parlano di come va il mondo, ma è raro vederlo fare con la forza dei nume
 Nell'epoca delle passioni tristi e del pessimismo cosmico, Rosling ci insegna una visione costruttiva del mondo, in cui il futuro torna serenamente, e con il supporto dei fatti, ad avere il segno +.
 
 [Inizia la terapia](docs/theraphy/therapy.html)
+
+# Le scuole coinvolte
+
+| Scuola | Comune | Studenti partecipanti |
+|---|---|----|
+| Liceo Scientifico E. Amaldi | Alzano Lombardo | 91 |
+| Liceo Scientifico P. Frisi | Monza | 27 |
+| Liceo Scientifico G. Marconi | Milano | 8 |
+| Liceo Scientifico L. Mascheroni | Bergamo | 52  |
+| Istituto di Istruzione Superiore L. Galvani | Milano | 49 |
+| Liceo Classico e Linguistico A. Manzoni | Lecco | 1 |
+| Liceo Scientifico A. Einstein | Milano | 27 |
+
 
 # Il PLS di Statistica
 

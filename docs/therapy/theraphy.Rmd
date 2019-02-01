@@ -1,5 +1,5 @@
 ---
-title: "Le statistiche come terapia"
+title: "Data theraphy"
 description: |
   PLS - Laboratorio di Statistica, Università degli Studi di Milano-Bicocca 
 author:
