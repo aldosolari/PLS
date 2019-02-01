@@ -58,7 +58,7 @@ Tutti parlano di come va il mondo, ma è raro vederlo fare con la forza dei nume
 
 Nell'epoca delle passioni tristi e del pessimismo cosmico, Rosling ci insegna una visione costruttiva del mondo, in cui il futuro torna serenamente, e con il supporto dei fatti, ad avere il segno +.
 
-[Inizia la terapia](docs/therapy.html)
+[Inizia la terapia](docs/theraphy/therapy.html)
 
 # Il PLS di Statistica
 
