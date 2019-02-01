@@ -1,0 +1,91 @@
+---
+title: "Piano Lauree Scientifiche"
+description: |
+  **Laboratorio di Statistica**, Università degli Studi di Milano-Bicocca 
+author:
+  - name: Aldo Solari
+    url: https://aldosolari.github.io/
+    affiliation: DEMS
+    affiliation_url: https://www.unimib.it/ateneo/dipartimenti-e-scuole/alla-scoperta-%E2%80%A6/dipartimento-economia-metodi-quantitativi-e-strategie-impresa
+date: "`r Sys.Date()`"
+output:
+  radix::radix_article:
+    toc: true
+    toc_depth: 1
+---
+
+# La visione del mondo basata sui fatti
+
+Il laboratorio di quest'anno prevede:
+
+* l’acquisizione degli strumenti statistici di base necessari per
+interpretare il mondo sulla base dei fatti;
+
+*  l’analisi di questionari preventivamente somministrati sulla conoscenza
+del mondo di oggi.
+
+Il laboratorio cercherà di spiegare agli studenti che il mondo va meglio
+di quanto non appaia, e che il mondo non si può capire senza numeri né
+soltanto con i numeri.
+
+Il laboratorio di quest’anno fa riferimento al libro *Factfulness*, sottotitolo:
+*Dieci ragioni per cui non capiamo il mondo e perché le cose vanno
+meglio*, dello statistico svedese Hans Rosling.
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=5uooRe07mYM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+# FACTFULLNESS: le statistiche come terapia
+
+
+
+# Hans Rosling
+
+è stato un medico, statistico e accademico svedese. Membro dell’Accademia
+di Svezia e del Karolinska Institutet, fondatore della sezione svedese
+di Medici senza frontiere e infine della fondazione Gapminder, ha vissuto
+vent’anni in Congo per studiare e combattere il konzo, una malattia
+epidemica paralizzante.
+
+
+# Il PLS di Statistica
+
+L’Università degli Studi di Milano-Bicocca aderisce da anni all’iniziativa
+del Piano delle Lauree Scientifiche (PLS) promossa dal Ministero dell’Università
+e dell’Istruzione (MIUR). Il PLS è stato creato per diffondere la
+conoscenza delle discipline scientifiche, inizialmente incluse nel progetto
+in numero relativamente ridotto, solo nel 2010 è entrata ufficialmente la
+disciplina Statistica dando luogo all’attività di Matematica-Statistica e
+dal 2015 la Statistica ha acquisito completa autonomia. 
+
+I due Corsi di laurea triennale di Statistica dell’Ateneo Milano-Bicocca,
+convenendo sulla necessità di una maggiore conoscenza della Statistica
+nelle Scuole secondarie di secondo grado, propongono attività
+diversificate all’interno del PLS.
+
+# I laboratori passati
+
+Il Piano Lauree Scientifiche di Statistica propone come attività centrale
+i *laboratori didattici*. Negli anni passati i laboratori hanno affrontato
+il tema del gioco d’azzardo con l’obiettivo di presentare e discutere gli
+aspetti di natura matematica, probabilistica e statistica legati ai diversi
+giochi proposti.
+
+*  Laboratorio “*Il gioco e il caso*”: condiviso con i corsi di Matematica,
+prevede un laboratorio probabilistico sul tema del gioco d’azzardo
+e un laboratorio statistico di analisi di questionari preventivamente
+somministrati.
+
+*  Laboratorio “*La statistica e il gioco*”: è programmato su un biennio
+e prevede in un primo anno l’introduzione all’analisi statistica del
+fenomeno attraverso somministrazione di questionari, nel secondo
+anno simulazioni di gioco d’azzardo.
+
+Le diverse attività di laboratorio sono rivolte a studenti delle scuole
+secondarie di secondo grado dalla II classe. Obiettivo di questa azione
+è rendere maggiormente consapevoli gli studenti delle scuole secondarie,
+delle implicazioni probabilistiche del gioco d’azzardo e della diffusione di
+tale fenomeno oltre a fornire strumenti di base statistici per interpretare
+un fenomeno.
+
+
