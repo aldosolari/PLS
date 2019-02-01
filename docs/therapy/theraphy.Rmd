@@ -1,0 +1,20 @@
+---
+title: "Le statistiche come terapia"
+description: |
+  PLS - Laboratorio di Statistica, Università degli Studi di Milano-Bicocca 
+author:
+  - name: Aldo Solari
+    url: https://aldosolari.github.io/
+    affiliation: DEMS
+    affiliation_url: https://www.unimib.it/ateneo/dipartimenti-e-scuole/alla-scoperta-%E2%80%A6/dipartimento-economia-metodi-quantitativi-e-strategie-impresa
+date: "`r Sys.Date()`"
+output:
+  radix::radix_article:
+    toc: true
+    toc_depth: 1
+---
+
+Per comprendere in modo efficace lo sviluppo socio-economico mondiale bisogna saper leggere i dati.
+Tutti parlano di come va il mondo, ma è raro vederlo fare con la forza dei numeri.
+
+Nell'epoca delle passioni tristi e del pessimismo cosmico, Rosling ci insegna una visione costruttiva del mondo, in cui il futuro torna serenamente, e con il supporto dei fatti, ad avere il segno +.
