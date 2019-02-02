@@ -61,9 +61,37 @@ epidemica paralizzante.
 Per comprendere in modo efficace lo sviluppo socio-economico mondiale bisogna saper leggere i dati.
 Tutti parlano di come va il mondo, ma è raro vederlo fare con la forza dei numeri.
 
-Nell'epoca delle passioni tristi e del pessimismo cosmico, Rosling ci insegna una visione costruttiva del mondo, in cui il futuro torna serenamente, e con il supporto dei fatti, ad avere il segno +.
+Nell'epoca delle passioni tristi e del pessimismo cosmico, Rosling ci insegna ad avere una visione costruttiva del mondo, in cui il futuro torna serenamente, e con il supporto dei fatti, ad avere il segno +.
 
 [Inizia la terapia](docs/theraphy/therapy.html)
+
+Prima di iniziare, puoi provare ad esplorare la *Carta della Salute Mondiale*.
+Questo grafico è una sorta di mappa mondiale per la salute e la ricchezza. I punti cardinali Nord e Sud stanno per sani e malati. Est e Ovest stanno per ricchi e poveri.  Provate a cercare il vostro Paese per vedere chi sono i Paesi vicini con reddito e salute simili, e osservare l'evoluzione nel tempo nel periodo dal 1951 al 2007. 
+
+Ogni Paese è rappresentato da una bolla, grande in relazione alla sua dimensione (numero di persone); la salute è misurata in termini di aspettativa di vita alla nascita (in anni), mentre la ricchezza è misurata come reddito pro capite, in dollari per anno adeguati all'inflazione.
+
+
+```{r, echo=FALSE, layout="l-body-outset", fig.width=8, fig.height=6}
+library(ggplot2)
+library(plotly)
+data(gapminder, package = "gapminder")
+
+base <- gapminder %>%
+  plot_ly(x = ~gdpPercap, y = ~lifeExp, size = ~pop, 
+          text = ~country, hoverinfo = "text") %>%
+  layout(xaxis = list(type = "log")) 
+
+base %>%
+  add_markers(color = ~continent, frame = ~year, ids = ~country) %>%
+  animation_opts(500, redraw = FALSE) %>%
+  animation_button(
+    x = 1, xanchor = "right", y = 0, yanchor = "bottom"
+  ) %>%
+  animation_slider(
+    currentvalue = list(prefix = "YEAR ", font = list(color="black"))
+  )
+```
+
 
 # Le scuole coinvolte
 
