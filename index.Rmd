@@ -26,14 +26,26 @@ output:
 Il laboratorio di quest'anno prevede:
 
 * l’utilizzo della statistica per
-interpretare un fenomeno sulla base dei fatti;
+interpretare un fenomeno di interesse sulla base dei dati;
 
-*  l’analisi di un questionario sulla conoscenza
-del mondo di oggi.
+*  l’analisi di un questionario sulla conoscenza degli aspetti socio-economici del mondo di oggi;
 
-Il laboratorio cercherà di spiegare agli studenti che il mondo va meglio
-di quanto non appaia, e che il mondo non si può capire senza numeri né
-soltanto con i numeri.
+* l'analisi dell'effetto ancoraggio. 
+
+Secondo Carlo Rovelli
+
+> Ragionamenti di tipo probabilistico e statistico sono uno strumento della ragione, potente e affilato. 
+Non disporne ci lascia indifesi. 
+Non avere chiarezza su nozioni come media, varianza, fluttuazioni e correlazioni è un pò come non sapere usare la moltiplicazione o la divisione. 
+
+<aside>
+Estratto da "Domenica" del "Sole 24 Ore", 20 Gennaio 2013. Tutti i diritti riservati.
+</aside>
+
+Tuttavia i numeri non bastano da soli. Il mondo non si può capire senza numeri né soltanto con i numeri: 
+
+> In questo mondo incerto, chiedere certezze assolute è una sciocchezza.  Chi esibisce risposte certe è di solito il meno affidabile. 
+Ma non per questo siamo nel buio. Fra certezza e totale incertezza vi è un prezioso spazio intermedio, ed è in questo spazio intermedio che si svolgono la nostra vita e il nostro pensiero.
 
 Il laboratorio di quest’anno fa riferimento al libro *Factfulness*, sottotitolo:
 *Dieci ragioni per cui non capiamo il mondo e perché le cose vanno
