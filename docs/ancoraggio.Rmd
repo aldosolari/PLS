@@ -1,0 +1,21 @@
+---
+title: "L'effetto ancoraggio"
+description: |
+  Piano Lauree Scientifiche, Laboratorio di Statistica
+author:
+  - name: Aldo Solari
+    url: https://aldosolari.github.io/
+    affiliation: DEMS
+    affiliation_url: https://www.unimib.it/ateneo/dipartimenti-e-scuole/alla-scoperta-%E2%80%A6/dipartimento-economia-metodi-quantitativi-e-strategie-impresa
+  - name: Laura Terzera
+    affiliation: DISMEQ
+    affiliation_url: https://www.dismeq.unimib.it/it
+  - name: Stefano Barberis, Alice Giampino, Luca Danese, Pietro Meoni, Samuele Cassinari
+    affiliation: Tutor
+date: "`r Sys.Date()`"
+output:
+  radix::radix_article:
+    toc: true
+    toc_depth: 1
+---
+

@@ -1,0 +1,92 @@
+---
+title: "Il questionario"
+description: |
+  Piano Lauree Scientifiche, Laboratorio di Statistica
+author:
+  - name: Aldo Solari
+    url: https://aldosolari.github.io/
+    affiliation: DEMS
+    affiliation_url: https://www.unimib.it/ateneo/dipartimenti-e-scuole/alla-scoperta-%E2%80%A6/dipartimento-economia-metodi-quantitativi-e-strategie-impresa
+  - name: Laura Terzera
+    affiliation: DISMEQ
+    affiliation_url: https://www.dismeq.unimib.it/it
+  - name: Stefano Barberis, Alice Giampino, Luca Danese, Pietro Meoni, Samuele Cassinari
+    affiliation: Tutor
+date: "`r Sys.Date()`"
+output:
+  radix::radix_article:
+    toc: true
+    toc_depth: 1
+---
+
+# Scolarizzazione delle bambine nei Paesi a basso reddito
+
+1. Attualmente, nei Paesi a basso reddito di tutto il mondo, quante bambine finiscono la scuola primaria? <br>
+    $\Box$ A: 20 per cento <br>
+    $\Box$ B: 40 per cento <br>
+    $\Box$ C: 60 per cento 
+
+# Distribuzione del reddito globale
+
+2. Quali delle seguenti curve rappresenta la distribuzione del reddito globale oggi? 
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '40%', out.height = '40%'}
+knitr::include_graphics("income.jpg")
+```
+
+# Povertà estrema
+
+3. Negli ultimi 20 anni, la percentuale della popolazione mondiale che vive in condizioni di estrema povertà è più o meno ... <br>
+    $\Box$ A: Raddoppiata <br>
+    $\Box$ B: Rimasta la stessa <br>
+    $\Box$ C: Dimezzata
+
+# Durata della vita
+
+4. Qual è l’attuale aspettativa di vita a livello mondiale? <br>
+    $\Box$ A: 50 anni <br>
+    $\Box$ B: 60 anni <br>
+    $\Box$ C: 70 anni
+
+# Futuro numero di bambini
+
+5. Oggi, sul pianeta, ci sono 2 miliardi di bambini tra 0 e 15 anni. Quanti ce ne saranno nel 2100, secondo le Nazioni Unite? <br>
+    $\Box$ A: 4 miliardi <br>
+    $\Box$ B: 3 miliardi <br>
+    $\Box$ C: 2 miliardi
+
+# Animali in via d'estinzione
+
+6. Nel 1996 la tigre, il panda gigante e il rinoceronte nero erano considerati in via d’estinzione. Quante di queste tre specie si trovano oggi in pericolo ancora più grave? <br>
+    $\Box$ A: tutte e tre <br>
+    $\Box$ B: una <br>
+    $\Box$ C: nessuna
+
+# Catastrofi naturali
+
+7. Com’è cambiato, nell’ultimo secolo, il numero annuale di decessi dovuti a calamità naturali? <br>
+    $\Box$ A: è più che raddoppiato <br>
+    $\Box$ B: è rimasto pressoché invariato <br>
+    $\Box$ C: si è più che dimezzato
+
+# Dove vivono le persone
+
+8. Oggi la popolazione mondiale ammonta a circa 7 miliardi. Quale carta geografica rispecchia meglio la loro distribuzione? (Ciascuna figura rappresenta 1 miliardo di persone.)
+
+![](https://s3-eu-west-1.amazonaws.com/static.gapminder.org/GapminderMedia/wp-uploads/20170330195501/Results-for-the-Swedish-Public-on-the-Gapminder-Test-2017%E2%80%99.jpg)
+
+# Vaccinazione dei bambini
+
+9. Attualmente, nel mondo, quanti bambini di 1 anno sono stati vaccinati contro qualche malattia? <br>
+    $\Box$ A: 20 per cento <br>
+    $\Box$ B: 50 per cento <br>
+    $\Box$ C: 80 per cento
+
+# Elettricità
+
+10. Quante persone al mondo hanno accesso all'elettricità? <br>
+    $\Box$ A: 20 per cento <br>
+    $\Box$ B: 50 per cento <br>
+    $\Box$ C: 80 per cento
+
+

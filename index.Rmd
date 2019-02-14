@@ -3,7 +3,7 @@ title: "Piano Lauree Scientifiche"
 description: |
   **Laboratorio di Statistica**, Università degli Studi di Milano-Bicocca 
 author:
-  - name: Aldo Solari (ideatore)
+  - name: Aldo Solari
     url: https://aldosolari.github.io/
     affiliation: DEMS
     affiliation_url: https://www.unimib.it/ateneo/dipartimenti-e-scuole/alla-scoperta-%E2%80%A6/dipartimento-economia-metodi-quantitativi-e-strategie-impresa
@@ -59,7 +59,7 @@ embed_url("https://www.youtube.com/watch?v=5uooRe07mYM")
 ```
 
 <aside>
-Video pubblicato il 3 Aprile 2018 su **gates**notes: The blog of Bill Gates. Tutti i diritti riservati.
+Video pubblicato il 3 Aprile 2018 su **gatesnotes**: The blog of Bill Gates.
 </aside>
 
 Hans Rosling è stato un medico, statistico e accademico svedese. Membro dell’Accademia
@@ -73,37 +73,70 @@ epidemica paralizzante.
 Per comprendere in modo efficace lo sviluppo socio-economico mondiale bisogna saper leggere i dati.
 Tutti parlano di come va il mondo, ma è raro vederlo fare con la forza dei numeri.
 
-Nell'epoca delle passioni tristi e del pessimismo cosmico, Rosling ci insegna ad avere una visione costruttiva del mondo, in cui il futuro torna serenamente, e con il supporto dei fatti, ad avere il segno +.
+Rosling ci insegna ad avere una visione costruttiva del mondo, in cui il futuro torna serenamente, e con il supporto dei fatti, ad avere il segno +.
 
-[Inizia la terapia](docs/theraphy/therapy.html)
+> Non va tutto male. Anzi, le cose non sono mai andate meglio; lo dicono i fatti. L'unico vero antidoto al luogo comune.
 
-Prima di iniziare, puoi provare ad esplorare la *Carta della Salute Mondiale*.
-Questo grafico è una sorta di mappa mondiale per la salute e la ricchezza. I punti cardinali Nord e Sud stanno per sani e malati. Est e Ovest stanno per ricchi e poveri.  Provate a cercare il vostro Paese per vedere chi sono i Paesi vicini con reddito e salute simili, e osservare l'evoluzione nel tempo nel periodo dal 1951 al 2007. 
+<aside>
+Estratto dal libro **Factfulness**, Rizzoli.
+</aside>
+
+Nel libro *Factfulness*, Rosling presenta la *Carta della Salute Mondiale*.
+Questo grafico è una sorta di mappa mondiale per la salute e la ricchezza. I punti cardinali Nord e Sud stanno per sani e malati. Est e Ovest stanno per ricchi e poveri.  
 
 Ogni Paese è rappresentato da una bolla, grande in relazione alla sua dimensione (numero di persone); la salute è misurata in termini di aspettativa di vita alla nascita (in anni), mentre la ricchezza è misurata come reddito pro capite, in dollari per anno adeguati all'inflazione.
 
+Provate a cercare il vostro Paese per vedere chi sono i Paesi vicini con reddito e salute simili, e osservare l'evoluzione nel tempo:
 
-```{r, echo=FALSE, layout="l-body-outset", fig.width=8, fig.height=6}
-library(ggplot2)
-library(plotly)
-data(gapminder, package = "gapminder")
+<head>
 
-base <- gapminder %>%
-  plot_ly(x = ~gdpPercap, y = ~lifeExp, size = ~pop, 
-          text = ~country, hoverinfo = "text") %>%
-  layout(xaxis = list(type = "log")) 
+<link rel="stylesheet" href="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/vizabi/develop/vizabi.css">
+<link rel="stylesheet" href="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/bubblechart.css">
 
-base %>%
-  add_markers(color = ~continent, frame = ~year, ids = ~country) %>%
-  animation_opts(500, redraw = FALSE) %>%
-  animation_button(
-    x = 1, xanchor = "right", y = 0, yanchor = "bottom"
-  ) %>%
-  animation_slider(
-    currentvalue = list(prefix = "YEAR ", font = list(color="black"))
-  )
-```
+<script src="//d3js.org/d3.v4.min.js"></script>
+<script src="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/vizabi/develop/vizabi.min.js"></script>
+<script src="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/preview/master/assets/vendor/js/vizabi-ws-reader/vizabi-ws-reader.js"></script>
+<script src="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/systema-globalis/master/ConfigBubbleChart.js"></script>
+<script src="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/bubblechart.js"></script>
 
+</head>
+<body>
+<div id="placeholder" width="600px" height="400px"></div>
+
+<script>
+var wsReader = WsReader.WsReader.getReader();
+Vizabi.Reader.extend("waffle", wsReader);
+
+ConfigBubbleChart.locale = {
+  "id": "en",
+  "filePath": "//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/vizabi/develop/assets/translation/"
+};
+
+ConfigBubbleChart.data = {
+  "reader": "waffle",
+  "path": "https://waffle-server-dev.gapminderdev.org/api/ddf/ql"
+};
+
+Vizabi("BubbleChart", document.getElementById("placeholder"), ConfigBubbleChart);
+</script>
+
+</body>
+
+<aside>
+SHOWING A FREE VIZUALIZATION FROM GAPMINDER.ORG, CC-BY LICENSE
+</aside>
+
+<br>
+
+Dal 4 all'8 Febbraio 2019, studenti, familiari e amici delle scuole coinvolte hanno avuto la possibilità di rispondere ad un questionario di dieci domande sulla conoscenza degli aspetti socio-economici del mondo di oggi. 
+
+Abbiamo raccolto 522 risposte al questionario. Com'è andata? 
+
+[**IL QUESTIONARIO**](docs/questionario.html)
+
+Abbiamo inoltre svolto un piccolo esperimento sull'effetto ancoraggio:
+
+[**L'EFFETTO ANCORAGGIO**](docs/ancoraggio.html)
 
 # Le scuole coinvolte
 
