@@ -19,3 +19,41 @@ output:
     toc_depth: 1
 ---
 
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(
+  echo = F, 
+  eval=T, 
+  message=F, 
+  warning=F, 
+  error=F, 
+  comment=NA, 
+  cache=F)
+rm(list=ls())
+library(ggplot2)
+library(plotly)
+library(dplyr)
+library(readr)
+load("dati.Rdata")
+```
+
+# UN
+
+```{r}
+# ancoraggio ultime due cifre cellulare
+plot(dati$cifre,dati$ONU,pch=19,col="blue",xlab="Cifra",ylab="ONU",cex=.7)
+lines(lowess(dati$cifre,dati$ONU,f = .3),col=2,lwd=2)
+```
+
+# Automobili 
+
+```{r}
+# ancoraggio auto
+plot(auto ~ anchor_auto, dati, horizontal=T)
+```
+
+# Ghandi
+
+```{r}
+# ancoraggio Gandhi con ggplot2
+ggplot(dati, aes(x=anchor_gandhi, y=gandhi, color=anchor_gandhi)) + geom_violin() + geom_boxplot(width=0.2) + geom_jitter(shape=16, position=position_jitter(0.2))  + geom_hline(yintercept = 78) + coord_flip() + theme_bw() 
+```
