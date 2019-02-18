@@ -130,13 +130,22 @@ SHOWING A FREE VIZUALIZATION FROM GAPMINDER.ORG, CC-BY LICENSE
 
 Dal 4 all'8 Febbraio 2019, studenti, familiari e amici delle scuole coinvolte hanno avuto la possibilità di rispondere ad un questionario di dieci domande sulla conoscenza degli aspetti socio-economici del mondo di oggi. 
 
-Abbiamo raccolto 522 risposte al questionario. Com'è andata? 
+Abbiamo raccolto 645 risposte al questionario. Com'è andata?
 
 [**IL QUESTIONARIO**](docs/questionario.html)
 
-Abbiamo inoltre svolto un piccolo esperimento sull'effetto ancoraggio:
+Per i risultati dell'esperimento sull'effetto ancoraggio:
 
 [**L'EFFETTO ANCORAGGIO**](docs/ancoraggio.html)
+
+Per le slides:
+
+[**SLIDES**](docs/slides.html)
+
+Per il laboratorio:
+
+[**LABORATORIO**](docs/laboratorio.html)
+
 
 # Le scuole coinvolte
 

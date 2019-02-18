@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Laboratorio Statistico con R</title>
+    <meta charset="utf-8">
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Laboratorio Statistico con R
+
+---
+
+
+
+
+class: center, middle
+
+# Username e password
+
+User: ..
+
+Password: ..
+
+---
+
+class: center, middle
+
+# Avviare il programma RStudio
+
+Tutti i programmi -&gt; ... -&gt; RStudio
+
+---
+
+# Importare i dati
+
+
+```r
+load("dati.Rdata")
+```
+
+---
+
+# Visualizzare i dati
+
+
+```r
+View(dati)
+```
+
+---
+
+# Matrice dei dati
+
+
+```r
+dim(dati)
+```
+
+```
+[1] 645  52
+```
+
+```r
+names(dati)
+```
+
+```
+ [1] "tempo"         "sesso"         "anno"          "zodiaco"      
+ [5] "Q1"            "Q2"            "Q3"            "Q4"           
+ [9] "Q5"            "Q6"            "Q7"            "Q8"           
+[13] "Q9"            "Q10"           "cifre"         "ONUcifre"     
+[17] "ONU"           "giorno"        "A1"            "A2"           
+[21] "A3"            "A4"            "B1"            "B2"           
+[25] "B3"            "B4"            "C1"            "C2"           
+[29] "C3"            "C4"            "D1"            "D2"           
+[33] "D3"            "D4"            "gruppo"        "auto"         
+[37] "gandhi"        "gruppo1"       "gruppo2"       "G1"           
+[41] "G2"            "G3"            "G4"            "G5"           
+[45] "G6"            "G7"            "G8"            "G9"           
+[49] "G10"           "corrette"      "anchor_gandhi" "anchor_auto"  
+```
+
+---
+
+class: center, middle
+
+# Numero di risposte corrette
+
+---
+
+# Numero di risposte corrette
+
+
+```r
+dati$corrette
+```
+
+```
+  [1] 0 4 2 5 2 1 2 3 3 4 3 3 0 4 4 1 1 6 2 2 1 2 1 2 2 1 1 3 1 1 1 1 1 2 1
+ [36] 2 5 1 1 1 3 3 1 2 8 4 3 5 2 1 3 4 5 5 4 2 2 2 4 2 0 1 1 2 1 2 4 1 3 1
+ [71] 1 4 2 1 3 3 2 3 2 2 2 2 3 3 3 0 0 3 2 1 1 3 2 1 2 3 2 3 5 3 1 1 1 1 1
+[106] 1 1 1 1 6 1 4 3 3 2 0 0 0 1 0 2 1 1 2 3 3 1 3 2 4 1 1 2 0 1 1 3 3 0 1
+[141] 2 2 1 1 3 5 1 4 2 3 4 1 1 1 3 4 4 5 2 4 0 2 3 2 2 1 1 2 1 3 3 2 1 0 1
+[176] 0 1 1 1 0 2 1 1 1 2 2 2 1 1 2 1 1 2 3 1 1 3 0 2 0 2 4 1 4 1 1 1 1 1 2
+[211] 1 3 3 3 4 2 1 1 4 1 8 2 1 3 3 3 1 2 1 1 1 1 0 1 2 4 2 2 2 2 1 2 2 0 2
+[246] 1 2 2 0 1 3 2 0 3 3 3 2 4 1 2 5 2 1 2 1 1 2 2 4 3 5 5 1 1 0 2 1 0 2 1
+[281] 2 4 1 2 2 2 1 5 1 0 3 0 1 1 1 2 0 2 5 1 1 1 2 3 2 1 2 0 1 2 2 4 1 1 4
+[316] 3 1 0 2 4 1 3 3 2 0 4 1 0 3 2 4 3 1 0 1 1 4 3 0 3 3 2 5 1 0 4 2 2 2 2
+[351] 5 0 1 1 0 3 2 5 1 2 0 2 4 0 4 3 2 2 0 1 1 0 1 3 2 3 0 2 3 2 3 1 3 2 1
+[386] 0 2 1 0 1 2 1 2 2 1 1 3 2 2 3 3 2 3 0 3 2 4 2 1 1 0 2 2 6 3 8 1 2 2 4
+[421] 2 1 2 4 4 1 3 0 1 1 5 0 3 1 1 0 1 6 0 0 3 3 2 2 2 7 2 1 1 1 3 0 1 2 1
+[456] 1 2 1 2 1 4 2 0 1 1 3 1 2 2 0 4 3 1 1 2 1 1 2 1 1 1 3 1 2 1 2 1 2 1 3
+[491] 2 3 5 3 2 0 1 1 1 2 1 2 1 0 2 1 3 1 1 0 2 2 1 1 5 1 2 2 1 2 2 2 1 0 1
+[526] 3 2 2 3 1 2 1 4 0 4 3 2 2 3 2 0 2 3 3 1 1 0 2 0 0 2 1 4 0 4 2 1 4 3 2
+[561] 3 1 0 3 2 3 0 2 3 3 1 1 3 1 3 2 2 1 1 0 3 1 0 2 1 3 0 1 1 1 1 1 2 1 3
+[596] 1 1 1 1 3 5 2 1 2 1 1 3 2 3 3 0 3 2 2 2 4 3 4 2 1 2 2 2 3 2 0 1 0 2 0
+[631] 1 3 3 2 0 1 3 0 0 0 1 0 2 1 0
+```
+
+---
+
+# Numero di risposte corrette
+
+* Dobbiamo cercare di sintetizzare i dati in qualche modo!
+
+* La **variabile** "numero di risposte corrette" può assume i valori
+`$$0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10$$`
+
+* Se contiamo quante volte ciascun valore compare nell’insieme di dati (cioè con quale frequenza compare), otteniamo la **distribuzione di
+frequenza** della variabile "numero di risposte corrette"
+
+---
+
+# Distribuzione di frequenza
+
+
+```r
+table(dati$corrette)
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Var1 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Freq &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 77 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 210 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 174 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 109 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Frequenze relative
+
+Frequenze relative = Frequenze / Numero di osservazioni
+
+
+```r
+n = nrow(dati)
+table(dati$corrette)/n
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Var1 &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Freq &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.119 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.326 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.270 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.169 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.073 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.031 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.006 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.002 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.005 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Diagramma a bastoncini
+
+
+```r
+plot(table(dati$corrette))
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+---
+
+# Valori ordinati
+
+
+```r
+sort(dati$corrette)
+```
+
+```
+  [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ [36] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ [71] 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[106] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[141] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[176] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[211] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[246] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[281] 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[316] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[351] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[386] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[421] 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+[456] 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+[491] 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+[526] 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+[561] 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+[596] 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5
+[631] 5 5 5 5 5 5 5 6 6 6 6 7 8 8 8
+```
+
+---
+
+# Indici di sintesi
+
+
+```r
+summary(dati$corrette)
+```
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   1.000   2.000   1.904   3.000   8.000 
+```
+
+---
+
+# Diagramma a scatola con baffi 
+
+
+```r
+boxplot(dati$corrette, horizontal = TRUE)
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+
+---
+
+class: center, middle
+
+# Rispondendo a caso
+
+Come giudicate la distribuzione del numero di risposte corrette? Qual è il termine di paragone? Rispondendo completamente a caso a tutte le domande, quante risposte corrette ci dobbiamo aspettare?
+
+---
+
+# Rispondendo a caso
+
+
+```r
+rbinom(n, size = 10, prob=1/3)
+```
+
+```
+  [1] 1 5 2 5 3 3 1 4 5 2 4 3 4 0 1 1 2 6 1 3 3 2 3 5 5 4 3 1 3 5 1 5 5 3 2
+ [36] 4 5 3 2 4 2 3 2 3 4 4 1 3 2 4 3 3 6 4 2 5 6 1 3 4 4 6 3 3 2 3 2 4 2 4
+ [71] 3 4 4 3 4 3 4 3 2 4 4 1 3 4 2 6 6 2 6 0 2 4 2 1 5 3 1 2 4 3 5 5 3 6 6
+[106] 4 5 1 5 5 2 2 2 4 6 3 3 3 5 1 4 3 4 1 2 2 4 6 4 4 3 2 3 2 4 3 3 4 6 5
+[141] 4 3 2 4 3 2 3 1 4 5 3 1 2 4 3 6 0 7 0 3 3 3 3 3 1 4 3 3 4 4 3 3 1 5 3
+[176] 3 2 4 3 3 3 5 3 1 3 2 3 2 2 4 4 3 1 1 3 3 5 5 3 4 2 6 5 4 2 5 4 2 5 5
+[211] 2 3 4 3 4 1 5 2 5 3 7 4 3 4 4 5 4 6 1 4 0 5 3 2 3 3 3 3 5 3 5 4 2 0 4
+[246] 4 4 2 2 3 2 2 3 2 5 2 5 3 4 3 2 3 5 5 1 2 5 3 2 5 3 5 1 2 3 3 3 3 4 5
+[281] 3 4 6 3 1 4 7 4 2 4 6 4 1 2 3 3 4 5 6 3 8 4 2 4 1 3 4 3 3 4 4 2 3 2 3
+[316] 2 4 6 3 2 3 3 3 4 6 5 6 5 4 4 2 3 3 1 2 2 3 2 4 4 3 3 3 3 0 4 4 3 5 2
+[351] 1 2 1 5 1 4 2 4 1 6 5 6 3 5 3 1 1 4 6 0 3 5 4 5 5 5 6 3 4 4 4 3 5 3 2
+[386] 3 3 4 3 3 4 3 3 5 4 3 2 2 3 2 5 3 2 3 4 5 3 5 4 4 2 4 4 3 3 3 1 1 1 2
+[421] 3 1 4 4 2 2 4 3 2 4 4 3 3 5 0 6 3 3 2 2 1 2 1 2 4 4 3 4 2 2 4 2 5 3 2
+[456] 4 3 5 2 3 3 3 4 4 2 4 2 4 5 1 5 0 4 2 2 1 1 4 2 5 2 2 5 2 3 3 3 4 5 1
+[491] 4 2 6 4 2 2 3 2 5 3 5 6 2 4 4 4 4 6 4 2 5 0 2 1 3 3 2 1 6 2 2 4 4 6 4
+[526] 3 4 2 4 5 7 5 2 3 5 2 4 2 2 4 2 5 2 4 3 4 3 7 4 2 4 5 4 5 1 4 3 4 2 1
+[561] 1 5 3 2 3 2 3 3 3 5 5 2 5 6 3 4 5 0 3 0 1 6 4 5 2 3 3 2 3 6 4 4 2 2 6
+[596] 3 3 8 3 5 5 3 3 2 4 5 1 1 4 4 4 4 4 2 6 3 1 4 4 4 4 5 4 2 1 3 4 5 4 3
+[631] 2 2 2 5 4 4 4 4 2 1 3 4 3 3 2
+```
+
+---
+
+# La variabile aleatoria Binomiale
+
+`$$X \sim \mathrm{Binomiale}(n,p)$$`
+
+* `\(n\)` = numero di prove
+
+* `\(p\)` = probabilità di successo in ciascuna prova
+
+* La media o valore atteso di `\(X\)` è pari a
+
+`$$n \times p = 10 \times \frac{1}{3} \approx 3.3$$`
+---
+
+
+```r
+plot(table(dati$corrette)/n)
+binomiale = dbinom(0:10, size=10, prob=1/3)
+lines( (0:10)+.2, binomiale, type="h", col=2)
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-14-1.png)&lt;!-- --&gt;
+
+---
+
+
+```r
+corretteacaso = rbinom(n, size = 10, prob=1/3)
+summary(corretteacaso)
+```
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   2.000   3.000   3.357   4.000   8.000 
+```
+
+```r
+summary(dati$corrette)
+```
+
+```
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   1.000   2.000   1.904   3.000   8.000 
+```
+
+---
+
+
+```r
+boxplot(dati$corrette,corretteacaso, col=2:3, horizontal = TRUE)
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-16-1.png)&lt;!-- --&gt;
+
+---
+
+class: center, middle
+
+# % di risposte corrette
+
+Qual è stata la domanda più difficile? La più facile?
+
+---
+
+
+```r
+pcorrette &lt;- colMeans(dati[,paste("G",1:10, sep="")])
+barplot(rbind(pcorrette,1-pcorrette))
+abline(h=1/3)
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
+
+---
+
+class: center, middle
+
+# Rappresentazioni grafiche
+
+---
+
+# Diagramma a torta
+
+
+```r
+pie(table(dati$sesso))
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
+
+---
+
+# Diagramma a barre
+
+
+```r
+barplot(table(dati$zodiac))
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
+
+---
+
+# Istogramma
+
+
+```r
+hist(dati$anno)
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-20-1.png)&lt;!-- --&gt;
+
+---
+
+class: center, middle
+
+Come varia il numero di risposte corrette rispetto al segno zodiacale?
+
+---
+
+
+```r
+aggregate(corrette ~ zodiaco, dati, FUN=median)
+```
+
+```
+      zodiaco corrette
+1    Acquario        2
+2      Ariete        2
+3    Bilancia        2
+4      Cancro        2
+5  Capricorno        2
+6     Gemelli        1
+7       Leone        2
+8       Pesci        2
+9  Sagittario        2
+10  Scorpione        2
+11       Toro        2
+12    Vergine        1
+```
+
+
+---
+
+
+```r
+boxplot(corrette ~ zodiaco, dati)
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
+
+---
+
+class: center, middle
+
+Come varia il prezzo medio auto tedesche rispetto all’ancoraggio?
+
+---
+
+
+```r
+plot(auto ~ anchor_auto, dati)
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-23-1.png)&lt;!-- --&gt;
+
+---
+
+class: center, middle
+
+Come varia l'età alla morte di Gandhi rispetto all’ancoraggio?
+
+---
+
+
+```r
+plot(gandhi ~ anchor_gandhi, dati)
+abline(h=78)
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
+
+---
+
+class: center, middle
+
+Come varia la % Paesi Africani all’ONU rispetto all’ancoraggio?
+
+---
+
+
+```r
+plot(ONU ~ cifre, dati)
+abline(lm(ONU ~ as.numeric(cifre), dati))
+```
+
+![](laboratorio_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightLanguage": "R",
+"countIncrementalSlides": false,
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

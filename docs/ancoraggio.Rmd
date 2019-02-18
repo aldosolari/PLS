@@ -138,8 +138,11 @@ aggregate(gandhi~anno_cod,dati,mean)
 ```
 
 ```{r}
-plot_ly(dati, y = ~gandhi, color = ~anchor_gandhi) %>% add_boxplot(x = ~anchor_gandhi) %>%
-  layout(title = "Ancoraggio sull'età di Gandhi",xaxis = list(title = ""),yaxis = list(title = "Età"))
+hline <- function(y = 0, color = "blue") {list(type = "line", x0 = 0, x1 = 1, xref = "paper",y0 = y, y1 = y,     line = list(color = color))}
+
+plot_ly(dati,x = ~anchor_gandhi,    y = ~gandhi,    split = ~anchor_gandhi,    type = 'violin',    box = list(      visible = T
+    ),meanline = list(visible = T    ))  %>%
+  layout(shapes = list(hline(79)))
 ```
 
 ```{r}
