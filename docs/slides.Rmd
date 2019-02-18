@@ -376,6 +376,81 @@ Carlo Rovelli, 20 Gennaio 2013 Domenica Il Sole 24 Ore
   
 ---
 
+# Vaccinazione dei bambini
+
+Attualmente, nel mondo, quanti bambini di 1 anno sono stati vaccinati contro qualche malattia? 
+
+  $\Box$ A: 20 per cento 
+    
+  $\Box$ B: 50 per cento 
+  
+  $\Box$ C: 80 per cento
+
+---
+
+```{r}
+R9 <- dati %>%
+      group_by(Q9) %>%
+      summarise (n = n()) %>%
+      mutate(perc = round(n *100/ sum(n),1))
+p9 <- ggplot(data=R9, aes(x=Q9, y=perc, 
+                          text=perc, 
+                          fill=c("F","F","T"))) +
+      geom_bar(stat="identity") +
+      geom_hline(yintercept=33.33) +
+      ylab("Percentuale") +
+      xlab("Risposta") +
+      guides(fill=FALSE) +
+      theme_bw() +
+      coord_flip() 
+ggplotly(p9,
+        tooltip="text")
+```
+
+* Solo il 16 per cento ha dato la risposta esatta
+
+* La maggioranza (45%) ha ipotizzato che fosse il 50 per cento
+
+---
+
+# Animali in via d'estinzione
+
+Nel 1996 la tigre, il panda gigante e il rinoceronte nero erano considerati in via d'estinzione. Quante di queste tre specie si trovano oggi in pericolo ancora più grave? 
+
+$\Box$ A: tutte e tre 
+    
+$\Box$ B: una 
+    
+$\Box$ C: nessuna
+
+
+---
+
+```{r}
+R6 <- dati %>%
+      group_by(Q6) %>%
+      summarise (n = n()) %>%
+      mutate(perc = round(n *100/ sum(n),1))
+p6 <- ggplot(data=R6, aes(x=Q6, y=perc, 
+                          text=perc, 
+                          fill=c("T","F","F"))) +
+      geom_bar(stat="identity") +
+      geom_hline(yintercept=33.33) +
+      ylab("Percentuale") +
+      xlab("Risposta") +
+      guides(fill=FALSE) +
+      theme_bw() +
+      coord_flip() 
+ggplotly(p6,
+        tooltip="text")
+```
+
+* Solo il 2.5 per cento ha dato la risposta esatta
+
+* La maggioranza (70.4%) ha ipotizzato che tutte e tre le specie fossero oggi in pericolo ancora più grave
+
+---
+
 # Critiche a Factfulness
 
 * [The One-Sided Worldview of Hans Rosling](https://quillette.com/2018/11/16/the-one-sided-worldview-of-hans-rosling/)
@@ -394,30 +469,6 @@ knitr::include_graphics("images/exttinctions.jpg")
 
 ---
 
-# La deforestazione tropicale
-
-Nel 2003 la quantità di deforestazione tropicale è stata di 6,5 milioni di ettari. Nel 2017 ... 
-
-  $\Box$ A: Si è dimezzata a 3,25 milioni di ettari
-  
-  $\Box$ B: E' rimasta più o meno la stessa (6,5 milioni di ettari)
-  
-  $\Box$ C: E' aumentata di oltre 2,5 volte (15,8 milioni di ettari)
-
----
-
-# I più ricchi
-
-Le 42 persone più ricche del mondo hanno la stessa ricchezza di quanti tra i più poveri?
-
-  $\Box$ A: 1 milione 
-    
-  $\Box$ B: 1 miliardo
-    
-  $\Box$ C: 3.7 miliardi (metà della popolazione mondiale)
-
----
-
 class: center, middle
 
 # L'effetto ancoraggio
@@ -426,15 +477,28 @@ class: center, middle
 
 # Daniel Kahneman e Amos Tversky
 
-Circa quarant'anni or sono gli psicologi israeliani Daniel Kahneman e Amos Tversky hanno dato alle stampe una serie di lavori in cui
-mostravano come la mente umana tenda a cadere in errore quando si
-trova costretta a scegliere in situazioni di incertezza
+```{r, echo=FALSE, fig.align = 'center', out.width = '50%', out.height = '50%'}
+knitr::include_graphics("images/kahnemantversky.jpg")
+```
+
+Circa quarant'anni or sono gli psicologi Daniel Kahneman e Amos Tversky hanno dimostrato come la mente umana tenda a cadere in errore quando si trova costretta a scegliere in situazioni di incertezza
 
 ---
 
-Le loro scoperte hanno posto le basi di una nuova disciplina, l’economia
-comportamentale, e la loro teoria della mente è stata premiata con il
-Nobel vinto da Kahneman nel 2002
+```{r, echo=FALSE, fig.align = 'center', out.width = '40%', out.height = '40%'}
+knitr::include_graphics("images/daniel.jpg")
+```
+
+Le loro scoperte hanno posto le basi di una nuova disciplina, **l’economia
+comportamentale**, e la loro teoria della mente è stata premiata con il Nobel vinto da Kahneman nel 2002
+
+---
+
+# Prezzo medio automobile tedesca
+
+* Secondo te, il prezzo medio di un’automobile tedesca è più o meno di **100.000/20.000** EUR (a seconda della versione del questionario)
+
+* Secondo te, a quanto ammonta il prezzo medio di un’automobile tedesca?
 
 ---
 
@@ -442,14 +506,68 @@ Nobel vinto da Kahneman nel 2002
 knitr::include_graphics("images/anchoring.jpg")
 ```
 
+L'euristica dell’ancoraggio descrive la comune tendenza umana a fare troppo affidamento sulle prime informazioni che si trovano ("*anchor*, ancora") quando si cerca di prendere una decisione
+
 ---
 
-# Prezzo medio automobile tedesca
+```{r}
+aggregate(auto~anchor_auto,dati,mean)
+```
 
+```{r}
+plot_ly(dati, y = ~auto, color = ~anchor_auto) %>% add_boxplot(x = ~anchor_auto) %>%
+  layout(title = "Ancoraggio sul prezzo dell'auto",xaxis = list(title = ""),yaxis = list(title = "Prezzo"))
+```
 
+---
+
+```{r}
+aggregate(auto~sesso,dati,mean)
+```
+
+```{r}
+plot_ly(dati, y = ~auto, color = ~sesso) %>% add_boxplot(x = ~sesso) %>%
+  layout(title = "Ancoraggio sul prezzo dell'auto",xaxis = list(title = ""),yaxis = list(title = "Prezzo"))
+```
 
 ---
 
 # Mahatma Gandhi
 
-2 Ottobre 1869 - 30 Gennaio 1948 (78 anni)
+```{r, echo=FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'}
+knitr::include_graphics("images/Gandhi.jpg")
+```
+
+.center[2 Ottobre 1869 - 30 Gennaio 1948 (78 anni)]
+
+* Gandhi aveva più o meno di **114/35** anni quando morì? 
+
+* Quanti anni aveva Gandhi quando morì?"
+
+---
+
+```{r}
+aggregate(gandhi~anchor_gandhi,dati,mean)
+```
+
+```{r}
+hline <- function(y = 0, color = "blue") {list(type = "line", x0 = 0, x1 = 1, xref = "paper",y0 = y, y1 = y,     line = list(color = color))}
+
+plot_ly(dati,x = ~anchor_gandhi,    y = ~gandhi,    split = ~anchor_gandhi,    type = 'violin',    box = list(      visible = T
+    ),meanline = list(visible = T    ))  %>%
+  layout(shapes = list(hline(79)))
+```
+
+---
+
+# Percentuale di nazioni africane nell'ONU
+
+```{r}
+plot_ly(data = dati) %>% add_markers(x = ~cifre, y = ~ONU) %>%  add_trace(x = lowess(dati$cifre,dati$ONU,f = .4)$x,y = lowess(dati$cifre,dati$ONU,f = .3)$y)
+```
+
+---
+
+# Pagina web PLS
+
+https://aldosolari.github.io/PLS/
