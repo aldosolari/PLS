@@ -555,12 +555,28 @@ hline <- function(y = 0, color = "blue") {list(type = "line", x0 = 0, x1 = 1, xr
 
 plot_ly(dati,x = ~anchor_gandhi,    y = ~gandhi,    split = ~anchor_gandhi,    type = 'violin',    box = list(      visible = T
     ),meanline = list(visible = T    ))  %>%
-  layout(shapes = list(hline(79)))
+  layout(shapes = list(hline(78)))
 ```
 
 ---
 
 # Percentuale di nazioni africane nell'ONU
+
+
+* Scrivi le ultime due cifre del tuo numero di telefono (cellulare)
+
+* La percentuale delle nazioni africane che appartengono all’ONU è maggiore del numero che hai appena scritto (le ultime due cifre del tuo cellulare)?
+
+* Qual è la tua ipotesi sulla percentuale di nazioni africane nell’ONU?
+
+---
+
+```{r}
+cifrecut = cut(as.numeric(dati$cifre),breaks = seq(0,100,10))
+plot(ONU ~ cifrecut, dati)
+```
+
+---
 
 ```{r}
 plot_ly(data = dati) %>% add_markers(x = ~cifre, y = ~ONU) %>%  add_trace(x = lowess(dati$cifre,dati$ONU,f = .4)$x,y = lowess(dati$cifre,dati$ONU,f = .3)$y)

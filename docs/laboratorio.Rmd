@@ -37,6 +37,14 @@ Tutti i programmi -> ... -> RStudio
 
 ---
 
+class: center, middle
+
+# Aprire la pagina Laboratorio
+
+https://aldosolari.github.io/PLS/docs/laboratorio.html
+
+---
+
 # Importare i dati
 
 ```{r}
