@@ -48,7 +48,7 @@ https://aldosolari.github.io/PLS/docs/laboratorio.html
 # Importare i dati
 
 ```{r}
-load("dati.Rdata")
+dati <- read.csv("https://raw.githubusercontent.com/aldosolari/PLS/master/docs/dati.csv")
 ```
 
 ---
