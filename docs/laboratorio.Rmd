@@ -209,6 +209,32 @@ boxplot(dati$corrette,corretteacaso, col=2:3, horizontal = TRUE)
 
 class: center, middle
 
+# Q1: Scolarizzazione delle bambine nei Paesi a basso reddito
+
+
+
+---
+
+```{r}
+# frequenze assolute
+table(dati$Q1)
+# frequenze relative
+table(dati$Q1)/n
+# % di risposte corrette
+mean(dati$Q1=="60%")
+```
+
+
+---
+
+```{r}
+plot(dati$Q1, col=c(0,0,2))
+abline(h=n/3)
+```
+---
+
+class: center, middle
+
 # % di risposte corrette
 
 Qual è stata la domanda più difficile? La più facile?
