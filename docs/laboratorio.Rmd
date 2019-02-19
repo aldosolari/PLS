@@ -299,7 +299,14 @@ abline(h=78)
 
 class: center, middle
 
-Come varia la % Paesi Africani all’ONU rispetto all’ancoraggio?
+Come varia la % Paesi Africani all’ONU rispetto all'ancoraggio?
+
+---
+
+```{r}
+cifre_classi = cut(dati$cifre, breaks = seq(0,100,10))
+plot(ONU ~ cifre_classi, dati)
+```
 
 ---
 
