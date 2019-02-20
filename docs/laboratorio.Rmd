@@ -19,37 +19,14 @@ knitr::opts_chunk$set(echo = T,
                       cache=F)
 ```
 
-class: center, middle
-
-# Username e password
-
-User: ..
-
-Password: ..
-
----
-
-class: center, middle
-
-# Avviare il programma RStudio
-
-Tutti i programmi -> ... -> RStudio
-
----
-
-class: center, middle
-
-# Aprire la pagina Laboratorio
-
-https://aldosolari.github.io/PLS/docs/laboratorio.html
-
----
 
 # Importare i dati
 
 ```{r}
 dati <- read.csv("https://raw.githubusercontent.com/aldosolari/PLS/master/docs/dati.csv")
 ```
+
+
 
 ---
 
@@ -231,15 +208,18 @@ mean(dati$Q1=="60%")
 plot(dati$Q1, col=c(0,0,2))
 abline(h=n/3)
 ```
+
 ---
 
 class: center, middle
 
-# % di risposte corrette
+% di risposte corrette
 
 Qual è stata la domanda più difficile? La più facile?
 
 ---
+
+
 
 ```{r}
 pcorrette <- colMeans(dati[,paste("G",1:10, sep="")])
