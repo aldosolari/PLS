@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Big Data?</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Aldo Solari" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+    <script src="libs/jquery-1.12.4/jquery.min.js"></script>
+    <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-1.3.1/leaflet.js"></script>
+    <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+    <script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+    <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+    <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+    <script src="libs/plotly-binding-4.8.0/plotly.js"></script>
+    <script src="libs/typedarray-0.1/typedarray.min.js"></script>
+    <link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+    <script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
+    <link href="libs/plotly-htmlwidgets-css-1.39.2/plotly-htmlwidgets.css" rel="stylesheet" />
+    <script src="libs/plotly-main-1.39.2/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Big Data?
+### Aldo Solari
+### 20 Novembre, 2018
+
+---
+
+
+
+
+# Benvenuti!
+
+&lt;img src="https://upload.wikimedia.org/wikipedia/it/a/a2/Logo_Universit%C3%A0_Milano-Bicocca.jpg" width="25%" height="25%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="http://divini.gov.it/wp-content/uploads/2016/04/Logo_PLS_scritte_nere.png" width="30%" height="30%" style="display: block; margin: auto;" /&gt;
+
+Quest'anno il gruppo di lavoro __PLS - Statistica__
+
+* Prof.ssa Laura Terzera
+
+* Prof. Aldo Solari
+
+* Dott. Roberto Boselli
+
+ha pensato di proporre un __corso di formazione per gli insegnanti__ sul tema:
+
+*Come sopravvivere all'esplosione dei dati.*  &lt;br&gt;
+*Tecniche e strumenti per l'analisi dei Big Data.*
+
+
+---
+
+# Calendario
+
+* __20 Novembre 2018__ - Prof. Aldo Solari &lt;br&gt;
+*10:30-13:30* Introduzione al tema dei Big Data
+
+
+* __26 Novembre 2018__ - Ing. Matteo Fontana &lt;br&gt;
+*10:30-13:30* La visualizzazione di Big Data &lt;br&gt;
+*14:30-17:30* Laboratorio Tableau 
+
+* __28 Novembre 2018__ - Dott. Roberto Boselli &lt;br&gt;
+*10:30-13:30* Trattamento dati non strutturati di tipo testuale  &lt;br&gt;
+*14:30-17:30* Laboratorio Rapidminer Studio 
+
+---
+
+# Il tema di oggi
+
+| Inizio | Fine  | Argomenti |
+|---|---|---|
+| 10:30 | 12:00 | Un diluvio di dati | 
+| | | Cosa sono i Big Data? | 
+| | | A cosa servono i Big Data? |
+| | | Grandi varietà |
+| | | Rise of the machines | 
+| 12:00 | 12:15 | PAUSA |
+| 12:15 | 13:00 | Un paradiso o un paradosso? | 
+| | | Conclusioni |
+
+
+Tutto il materiale è disponibile all'indirizzo
+
+[https://aldosolari.github.io/PLS/Big.html](https://aldosolari.github.io/PLS/Big.html)
+
+---
+
+class: inverse, center, middle
+
+# Un diluvio di dati
+
+---
+
+
+# Un diluvio di dati
+
+&lt;img src="http://itmonitor.zenoss.com/wp-content/uploads/2013/05/DataDeluge.jpg" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: [The Economist](https://www.economist.com/leaders/2010/02/25/the-data-deluge), 25 Febbraio 2010]
+
+---
+
+# Ogni minuto 
+
+&lt;img src="https://www.aldociana.it/wp-content/uploads/2018/01/web-minuto.jpg" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+# Il nuovo petrolio
+
+&lt;img src="https://www.economist.com/sites/default/files/images/print-edition/20170506_LDD001_0.jpg" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: [The Economist](https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data), 6 Maggio 2017]
+
+
+
+&gt; La risorsa di più alto valore al mondo non è più il petrolio, sono i dati
+
+
+---
+
+# Big
+
+
+Quando qualcosa è importante, diventa __Big__:
+
+  * __Big Bang__, lo scoppio primordiale che ha dato origine all’universo
+    
+  * __Big Mac__, l’hamburger a doppio strato che delizia gli americani dal 1967
+    
+  * ...
+    
+  * __Big Data__ ?
+
+---
+class: inverse, center, middle
+
+# Cosa sono i Big Data?
+
+---
+
+#  E' solo una questione di dimensioni?
+
+
+| Nome | Simbolo | Byte | 
+|---|---|---|
+| kilobyte | kB | `\(2^{10} = 1024 \approx 1000\)`	|
+| megabyte |	MB |	`\(1000^2\)`	|
+| gigabyte |	GB |	`\(1000^3\)`	|
+| terabyte |	TB |	`\(1000^4\)`	|
+| petabyte |	PB |	`\(1000^5\)` |
+| exabyte	| EB	| `\(1000^6\)` |
+| zettabyte |	ZB |	`\(1000^7\)` |
+| yottabyte |	YB |	`\(1000^8\)` |
+
+---
+
+# Definizione classica: le 3 V
+
+* __Volume__ (*Volume*) la dimensione dei dati: quanto grandi?
+
+* __Velocità__ (*Velocity*) il flusso di dati: quanti dati al secondo?
+
+* __Varietà__ (*Variety*) la natura dei dati: in quanti formati? testo, immagini, audio, video etc.
+
+In seguito sono state introdotte una quarta e una quinta V
+
+* __Veridicità__ (*Veracity*), ovvero la qualità dei dati acquisiti
+
+* __Valore__ (*Value*)
+
+---
+
+# Le 4 V
+
+&lt;img src="https://www.ibmbigdatahub.com/sites/default/files/styles/xlarge-scaled/public/infographic_image/4-Vs-of-big-data.jpg?itok=4syrvSLX" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: [IBM Big Data &amp; Analytics Hub](https://www.ibmbigdatahub.com/infographic/four-vs-big-data)]
+
+
+---
+
+# La quinta V
+
+&lt;img src="https://www.ibmbigdatahub.com/sites/default/files/styles/xlarge-scaled/public/4vs_infographic_final.jpg?itok=XYAq_lSF" width="30%" height="30%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: [IBM Big Data &amp; Analytics Hub](https://www.ibmbigdatahub.com/infographic/extracting-business-value-4-vs-big-data)]
+
+
+---
+
+# Definizione da Wikipedia
+
+&gt; Big data is a term used to refer to data sets that are __too large or complex__ for traditional data-processing applications software to adequately deal with.
+
+&gt; ...
+
+&gt; What qualifies as being "big data" varies depending on the capabilities of the users and their tools, and expanding capabilities make big data a __moving target__ ...
+
+---
+
+# Definizione relativa
+
+&gt; Big data is when your workflow breaks - Randall Pruim
+
+Per esempio, il mio flusso di lavoro si interrompe se
+
+* la dimensione del dataset è troppo grande per il mio portatile 
+
+* il flusso dei dati è troppo veloce da processare e analizzare
+
+* i dati sono di diversa natura e provengono da diverse sorgenti
+
+* etc.
+
+---
+
+# Definizione provocatoria
+
+![](https://www.unbelievable-machine.com/en/wp-content/uploads/sites/3/2016/03/TUM-PM66-Teenage-2.jpg)
+
+---
+
+class: inverse, center, middle
+
+# Grandi varietà
+
+---
+
+# Tipologie di dati
+
+I Big Data possono essere 
+
+* strutturati 
+* non-strutturati 
+
+e possono venir generati da
+
+* esseri umani
+* macchine
+
+Classificazione *United Nations Economic Commission for Europe* (UNECE):
+
+1. Social Networks (human-sourced information)
+
+2. Traditional Business systems (process-mediated data)
+
+3. Internet of Things (machine-generated data)
+
+---
+
+# Social Networks 
+
+Dati prodotti tramite l'interazione umana con dispositivi digitali (anche
+mobili):
+
+* Social Networks: Facebook, Twitter, Tumblr
+* Blogs and comments
+* Personal documents
+* Pictures: Instagram, Flickr, Picasa ...
+* Video loaded in Youtube
+* Internet searches
+* Mobile data: text messages
+* User-generated maps
+* EMail
+
+---
+
+# Traditional Business systems
+
+Dati raccolti da sistemi tradizionali in modalità passiva:
+
+* Data produced by Public Agencies
+    - medical records
+* Data produced by businesses
+    - commercial transactions
+    - banking/stock records
+    - e-commerce
+    - credit cards
+    
+---
+
+# Internet of Things
+
+Sensori e macchine utilizzati per misurare e
+registrare eventi e situazioni nel mondo fisico 
+
+* Data from sensors
+    - fixed sensors
+          - home automation
+          - weather/pollution sensors
+          - traffic sensors/webcam
+          - scientific sensors
+          - security/surveillance videos/images
+    - mobile sensors (tracking)
+          - mobile phones: calls, position
+          - cars
+          - satellite images
+* Data from computer systems
+    - logs
+    - web logs
+
+---
+
+# Dati alti e grassi
+
+Possiamo pensare ai dati come ad una matrice `\(n\times p\)`
+
+* Big `\(n\)`: dati "alti"
+
+* Big `\(p\)`: dati "grassi"
+
+Il rapporto
+`$$\frac{n}{p}$$`
+
+può essere interpretato come una misura della dimensione effettiva
+
+[How Big is Big Data?](https://www.bloomberg.com/graphics/2014-fix-this-big-data/)
+
+---
+
+# Da Fisher ...
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Species &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# ... a Netflix
+
+&lt;img src="http://growthmedia.ca/wp-content/uploads/2017/04/lessons-learned-from-building-machine-learning-software-at-netflix.jpg" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# ... fino alla Genomica
+
+&lt;img src="https://simonsfoundation.imgix.net/wp-content/uploads/sites/2/2015/12/22175530/wholeGenome2440.jpg?auto=format&amp;w=1220&amp;q=90" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# GATTACA - 1997
+
+&lt;img src="https://images-na.ssl-images-amazon.com/images/I/71CruJN2sfL._RI_SX200_.jpg" width="30%" height="30%" style="display: block; margin: auto;" /&gt;
+
+__Trama__ : In un prossimo futuro è possibile far nascere esseri umani con un corredo genetico praticamente perfetto
+
+---
+
+
+class: inverse, center, middle
+
+# A cosa servono i Big Data?
+
+---
+
+# A cosa servono i Big Data?
+
+__Personalizzazione__ : la soluzione "giusta" per te si basa su dati di persone "come" te
+
+* Marketing personalizzato
+
+* Medicina personalizzata
+
+* etc.
+
+
+---
+
+# Il valore dei Big Data
+
+
+&gt; Big Data is not about the data!
+
+&gt; The Value in Big Data: the Analytics
+
+&gt; Gary King, 2013
+
+---
+
+# La scienza dei dati
+
+
+&gt; The key word in "Data Science" is not Data, it is Science
+
+&gt; Jeff Leek 
+
+Data Science è utile solo quando i dati vengono utilizzati per rispondere a
+domanda scientifiche
+
+---
+
+class: inverse, center, middle
+
+# Esempi di dati
+
+---
+
+
+# Dati spaziali: dove siamo?
+
+<div id="htmlwidget-b2c006962ab20ba5f218" style="width:504px;height:504px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b2c006962ab20ba5f218">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[45.5171983,9.21326685898239,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"noi siamo qui",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[45.5171983,45.5171983],"lng":[9.21326685898239,9.21326685898239]},"setView":[[45.5171983,9.21326685898239],17,[]]},"evals":[],"jsHooks":[]}</script>
+
+---
+
+# Dati amministrativi: nomi
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; year &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; sex &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; alive_prob &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; age_today &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; est_alive_today &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1955 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Kendell &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.818265 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.728770 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dajanay &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.991620 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.941340 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1971 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jens &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.927751 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24.121526 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jadey &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.992975 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.950825 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 2008 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Eiza &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.993788 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.863336 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1915 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; M &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Othmar &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.015735 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 99 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.188820 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+&lt;img src="https://fivethirtyeight.com/wp-content/uploads/2014/05/silver-feature-anna3.png?w=1150" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+
+.center[Image credit: [FiveThirtyEight](https://fivethirtyeight.com/features/how-to-tell-someones-age-when-all-you-know-is-her-name/)]
+
+---
+
+&lt;img src="https://fivethirtyeight.com/wp-content/uploads/2014/05/silver-feature-most-common-women-names3.png?w=1150" width="70%" height="70%" style="display: block; margin: auto;" /&gt;
+
+
+.center[Image credit: [FiveThirtyEight](https://fivethirtyeight.com/features/how-to-tell-someones-age-when-all-you-know-is-her-name/)]
+
+---
+
+# Jhon, Paul, George e Ringo
+
+<div id="htmlwidget-0be961e93ec74338a770" style="width:504px;height:504px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0be961e93ec74338a770">{"x":{"visdat":{"153442aa707c8":["function () ","plotlyVisDat"]},"cur_data":"153442aa707c8","attrs":{"153442aa707c8":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","mode":"lines","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"year"},"yaxis":{"domain":[0,1],"automargin":true,"title":"n"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"cloud":false},"data":[{"x":[1880,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1892,1893,1894,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015],"y":[5126,4664,5193,4736,4961,4674,4671,4284,4912,4430,4458,3931,4760,4320,4365,4289,4286,4078,4853,4018,5403,3609,4223,3961,4219,4256,4201,4445,4584,4688,5441,6586,11734,13873,17603,22308,23379,24197,26320,25173,26890,27474,27350,27030,27370,26564,25900,25951,24401,23016,22773,20678,20437,18359,18494,18554,18192,18429,18435,17886,18307,19258,21270,21676,20418,19319,21569,23916,21917,21318,20185,20215,19807,19168,18683,18156,17235,16862,15638,15007,14060,13636,12559,12085,11797,10688,9939,9706,9391,9202,8925,8229,7164,6606,6283,5842,5564,5603,5293,5256,5297,5157,4988,4490,4264,4254,4342,4087,4293,4511,4564,4179,3892,3511,3318,3286,3227,3175,3044,3041,3035,3085,3015,2910,2734,2823,2699,2757,2551,2380,2368,2315,2333,2543,2999,3032],"type":"scatter","mode":"lines","name":"George","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"textfont":{"color":"rgba(102,194,165,1)"},"error_y":{"color":"rgba(102,194,165,1)"},"error_x":{"color":"rgba(102,194,165,1)"},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1880,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1892,1893,1894,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015],"y":[9655,8769,9557,8894,9388,8756,9026,8110,9247,8548,8502,7680,9039,8049,8238,8320,8139,7550,8159,6990,9829,6899,7907,7608,8108,8060,8264,8983,9342,9591,11450,13445,24587,29329,37948,47577,50046,51853,56557,53530,56914,58225,57275,57476,59055,57195,56114,55949,53746,52113,52433,48403,48603,46224,46733,47489,47665,48745,50507,51021,54766,57510,66023,68926,66610,66122,79256,88325,82836,81152,79447,81529,83107,80123,81140,80019,80763,78985,75990,76425,76124,79910,78450,78645,82541,71563,65064,61633,60934,58789,58538,51520,43185,39180,37655,35102,33995,34236,34032,35436,35271,34880,34690,33146,32599,31491,30190,29535,29394,29838,29066,27798,26241,24989,24175,23232,22169,21372,20615,20341,20084,18879,17442,17222,16439,15760,15153,14424,13310,12103,11543,11027,10607,10687,10659,10303],"type":"scatter","mode":"lines","name":"John","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"textfont":{"color":"rgba(252,141,98,1)"},"error_y":{"color":"rgba(252,141,98,1)"},"error_x":{"color":"rgba(252,141,98,1)"},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1880,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1892,1893,1894,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912,1913,1914,1915,1916,1917,1918,1919,1920,1921,1922,1923,1924,1925,1926,1927,1928,1929,1930,1931,1932,1933,1934,1935,1936,1937,1938,1939,1940,1941,1942,1943,1944,1945,1946,1947,1948,1949,1950,1951,1952,1953,1954,1955,1956,1957,1958,1959,1960,1961,1962,1963,1964,1965,1966,1967,1968,1969,1970,1971,1972,1973,1974,1975,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015],"y":[301,291,397,358,422,428,466,449,529,556,607,564,747,743,824,933,964,923,991,885,1288,924,1067,1081,1194,1262,1309,1358,1478,1676,2005,2393,4785,5966,7733,10328,10791,11153,11756,11307,12570,13167,12926,13365,13338,14177,13652,13604,13159,12429,12956,12251,12068,11847,12195,12558,12303,12871,13356,13330,14104,15157,16487,17253,16654,16997,21052,22795,21247,21590,21763,22833,24282,25497,26224,26673,26872,26984,26253,25700,25644,25623,23807,26681,26884,24936,23583,22843,21881,20705,20213,17480,14567,12911,12324,12020,11793,11807,11737,11646,11818,11774,11303,10823,10455,10307,9707,9697,9426,9029,8579,7678,6997,6477,5796,5413,4879,4748,4319,4015,3790,3509,3257,3248,3181,3142,3021,2762,2552,2422,2122,2067,1947,2030,1996,2015],"type":"scatter","mode":"lines","name":"Paul","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"textfont":{"color":"rgba(141,160,203,1)"},"error_y":{"color":"rgba(141,160,203,1)"},"error_x":{"color":"rgba(141,160,203,1)"},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[1964,1965,1966,1972,1974,1975,1976,1977,1978,1979,1980,1981,1982,1984,1986,1994,1995,2001,2005,2006,2008,2009,2010,2011,2012,2015],"y":[12,18,8,6,6,8,13,10,12,9,5,8,9,6,7,6,5,7,9,8,5,7,6,6,7,12],"type":"scatter","mode":"lines","name":"Ringo","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"textfont":{"color":"rgba(231,138,195,1)"},"error_y":{"color":"rgba(231,138,195,1)"},"error_x":{"color":"rgba(231,138,195,1)"},"line":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":[]}</script>
+
+
+---
+
+# Dati testuali: word cloud 
+
+
+&lt;img src="https://66.media.tumblr.com/2d715b10f0cb6da1d262f6bd23ad935c/tumblr_inline_mnq20epyjM1qz4rgp.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Dati testuali: sentiment analysis
+
+&lt;img src="https://public.tableau.com/thumb/views/BeatlesSentimentAnalysis/SentimentbyBeatle" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: [public tableau](https://public.tableau.com/views/BeatlesSentimentAnalysis/SentimentbyBeatle?%3Aembed=y&amp;%3AshowVizHome=no&amp;%3Adisplay_count=y&amp;%3Adisplay_static_image=y)]
+
+
+---
+
+# Dati musicali
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; album_name &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; track_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; danceability &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; energy &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; valence &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; key_mode &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Revolver (Remastered) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Taxman - Remastered 2009 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.469 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.596 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7830 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; G major &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Revolver (Remastered) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Eleanor Rigby - Remastered 2009 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.581 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.280 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.8130 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; E minor &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Revolver (Remastered) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; I'm Only Sleeping - Remastered 2009 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.494 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.470 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6980 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; G# minor &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Revolver (Remastered) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Love You To - Remastered 2009 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.391 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.593 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7070 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F major &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Revolver (Remastered) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Here, There And Everywhere - Remastered 2009 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.290 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.247 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3600 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; G major &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Revolver (Remastered) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Tomorrow Never Knows - Remastered 2009 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.380 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.829 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0534 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F major &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+# Dati musicali: sentify
+
+Spotify fornisce una serie di informazioni su brani musicali, ad esempio
+
+* __Energy__ : da 0 a 1, rappresenta una misura percettiva di intensità e attività. In genere, le tracce energetiche si sentono veloci, rumorose e rumorose. Ad esempio, il death metal ha un'energia alta, mentre un preludio di Bach ha un punteggio basso sulla scala. 
+
+*  __Valence__ : da 0 a 1, descrive la positività musicale trasmessa da una traccia. Le tracce con suono ad alta valenza sono più positive (ad esempio, felici, allegre, euforiche), mentre le tracce con valenza bassa suonano più negative (ad esempio, triste, depresso, arrabbiato)
+
+Questa [app](http://rcharlie.net/sentify/) ti consente di visualizzare l'energia e la valenza (positività musicale) di tutti gli artisti e le playlist di Spotify.
+
+Per un confronto fra paesi europei si veda questo [post](http://paulelvers.com/post/emotionsineuropeanmusic/) di Paul Elvers 
+
+
+---
+
+# Dati network: #BankTransferDay
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/XX9he5lkNSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: inverse, center, middle
+
+# Rise of the machines
+
+---
+
+# Rise of the machines
+
+![](Big_files/figure-html/unnamed-chunk-20-1.png)&lt;!-- --&gt;
+
+---
+
+# Machine Learning &amp; AI
+
+Qual è la differenza fra Machine Learning (apprendimento automatico) e Intelligenza Artificiale?
+
+* L'intelligenza artificiale è il concetto più ampio di macchine in grado di svolgere compiti in un modo che considereremmo "intelligenti"
+
+* Machine Learning è un'applicazione corrente dell'intelligenza artificiale basata sull'idea che dovremmo davvero essere in grado di dare alle macchine l'accesso ai dati e lasciarli imparare da soli
+
+---
+
+# 1997 - IBM Deep Blue
+
+&lt;img src="https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA5Mi8xNTYvb3JpZ2luYWwvZ2Fycnkta2FzcGFyb3YtdnMtZGVlcC1ibHVlLmpwZWc=" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# 2011 - IBM Watson plays Jeopardy!
+
+&lt;img src="https://www.informazionesenzafiltro.it/wp-content/uploads/2016/03/ibm-watson.jpg" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# 2013 - Google Deepmind Atari Project
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/E-YinrqWMvs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+#  2016 - Google Deepmind AlphaGo
+
+&lt;img src="https://filmperevolvere.it/wp-content/uploads/2018/01/ezgif-4-dafa365d79.jpg
+" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Google DeepMind
+
+* A differenza di Deep Blue o Watson di IBM, che sono stati sviluppati per uno scopo predefinito, DeepMind apprende dai dati
+
+* Tecnicamente utilizza una __rete neurale convoluzionale__ con Q-learning, una forma di *reinforcement learning*
+
+* Senza alterare il codice, DeepMind può imparare altri compiti: è un __general-purpose algorithm__ 
+
+---
+
+class: inverse, center, middle
+
+# Big data: un paradiso o un paradosso?
+
+---
+
+# Il paradiso
+
+* I principali metodi statistici sono giustificati da considerazioni asintotiche, i.e. grandi campioni
+
+* Ad esempio, la Legge dei grandi numeri e il
+il Teorema del limite centrale richiedono grandi campioni
+
+* Con la crescita esplosiva delle dimensioni dei dati, siamo arrivati al paradiso statistico?
+
+---
+
+# Big Data &gt; Metodo Scientifico?
+
+&lt;img src="https://media.wired.com/photos/5a6bb01fe9c86f511f5e79d6/master/pass/pb_theory_f.jpg
+" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: [Wired](https://www.wired.com/2008/06/pb-theory/), 23 Giugno 2008]
+
+&gt; The data deluge makes the scientific method — hypothesize, model, test — obsolete.
+
+&gt; Petabytes allow us to say: "Correlation is enough." We can stop looking for models. We can analyze the data without hypotheses about what it might show. We can throw the numbers into the biggest computing clusters the world has ever seen and let statistical algorithms find patterns where science cannot. 
+
+&gt; Chris Anderson
+
+---
+
+# Il paradosso
+
+&gt; The bigger the data, the surer we fool ourselves - X.L. Meng
+
+Più grandi sono i dati, più facile ingannarsi
+
+---
+
+# Le insidie
+
+* 14 Marzo 2014, Lazer et al. per __Science__ :  *The Parable of Google Flu: Traps in Big Data Analysis*
+
+* 28 Marzo 2014, Tim Harford  per __Financial Times__ : *Big data: are we making a big mistake?*
+
+* 3 Novembre 2014, Howard Baldwin per __Forbes__ : *Big Data Is Big, But It's Not That Powerful*
+
+* 18 Ottobre 2017, Alastair Dryburgh per __Forbes__ : *Big Data: Insights Or Illusions?*
+
+* 16 Novembre 2018, Alex Robbio per __Forbes__ : *Are We Nearing The End Of Hadoop And Big Data?*
+
+
+---
+
+class: inverse, center, middle
+
+# Google e l'influenza
+
+---
+
+# La parabola di Google Flu 
+
+
+&lt;img src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fstevensalzberg%2Ffiles%2F2014%2F03%2F670px-symptoms_of_influenza-svg.jpg" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
+
+* __Idea__ : Le persone con l'influenza probabilmente vanno online per scoprire come trattarla o per cercare altre informazioni sull'influenza
+
+* __Obiettivo__ : Prevedere epidemie di influenza più velocemente rispetto alle autorità sanitarie tradizionali come i *Centers for Disease Control* (CDC)
+
+---
+
+# Grandi aspettative
+
+&lt;img src="https://static01.nyt.com/images/2008/11/12/technology/1112-biz-webFLU.gif" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: New York Times, 12 Novembre 2008 ]
+
+---
+
+&lt;img src="http://web.mit.edu/keithw/www/gft-pics/firstyear.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="http://web.mit.edu/keithw/www/gft-pics/us.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Qualità dei dati?
+
+* Uno dei problemi è che la maggior parte delle persone non sa cosa sia "l'influenza", e fare affidamento sulle ricerche di Google da parte di persone che potrebbero essere completamente all'oscuro dell'influenza non produce informazioni utili
+
+* O per dirla in altro modo, un'enorme collezione di disinformazione non può produrre un piccolo gioiello di vera informazione
+
+---
+
+# Sovra-adattamento ai dati? (Overfitting)
+
+&lt;img src="http://1.bp.blogspot.com/-EWfYvHcAbsE/URxzj7tEUvI/AAAAAAAAA1E/IDM4PenIIcQ/s1600/i2.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: inverse, center, middle
+
+# Le neuroscienze e il salmone
+
+---
+
+# Risonanza magnetica funzionale (fMRI)
+
+&lt;img src="http://www.ccbi.cmu.edu/images/InScannerSIBR.jpg
+" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+&lt;img src="https://static1.squarespace.com/static/571fba899f7266a7171030cf/t/573604d445bf2122c0203fa7/1463158001823/" width="70%" height="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Un salmone
+
+&lt;img src="https://blogs.scientificamerican.com/scicurious-brain/files/2012/09/dead-salmon-fmri1.png
+" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# La storia
+
+* Nel 2009, il neuroscienziato Craig Bennett ha condotto uno studio di risonanza magnetica funzionale utilizzando come soggetto un salmone
+
+* Le foto presentate (al salmone) rappresentavano individui (umani) in una serie di situazioni sociali con una specifica valenza emozionale
+
+* Lo studio ha mostrato le risposte diverse dell'attività cerebrale con il variare delle foto e delle diverse situazioni sociali ad impatto emozionale
+
+* Molto improbabile che il cervello di un salmone possa svolgere questi compiti
+
+* Meno che mai il cervello di un salmone morto
+
+---
+
+# La legge dei numeri davvero grandi
+
+
+* Per verificare la presenza di attività celebrale si effettuta un test statistico
+
+* Il test statistico ha una probabilità di errore (individuare attività celebrale quando non c'è) pari a 1 su 1000 
+
+* Siamo stati così sfortunati?
+
+* No, il problema è che dobbiamo effettuare una molteplicità di test: un test per ogni voxel (pixel tridimensionale) 
+
+* Vale quindi __la legge dei numeri veramente grandi__: 
+
+&gt; dato un numero sufficientemente grande di opportunità, ci si può aspettare che accadano eventi altamente improbabili
+
+* Nel nostro contesto
+    - numero di opportunità = 10000 voxel
+    - probabilità di errore = 0.001
+    
+* Il numero atteso di errori è pari a 
+`$$10000 \cdot 0.001 = 10$$`
+
+---
+
+&lt;img src="https://www.economist.com/sites/default/files/imagecache/print-cover-full/print-covers/20131019_cna400.jpg" width="50%" height="50%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+# Studi scientifici?
+
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/0Rnq1NpHdmw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+# Un nuovo paradigma
+
+__Tradizionale__
+
+1. Formulare le ipotesi/modelli/domande (sulla base di conoscenze pregresse)
+
+2. Raccogliere i dati
+
+3. Rispondere alle domande (inferenza)
+
+
+__Nuovo__
+
+
+1. Raccogliere i dati
+
+2. Formulare le ipotesi/modelli/domande (sulla base dei dati)
+
+3. Rispondere alle domande (inferenza)
+
+
+
+
+
+---
+
+# Science Isn’t Broken
+
+
+It’s just a hell of a lot harder than we give it credit for.
+
+By [Christie Aschwanden](https://fivethirtyeight.com/features/science-isnt-broken/#part1)
+
+
+---
+class: inverse, center, middle
+
+# Conclusioni
+
+---
+
+
+# Big hype?
+
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Gartner_Hype_Cycle.svg/330px-Gartner_Hype_Cycle.svg.png" width="75%" height="75%" style="display: block; margin: auto;" /&gt;
+
+.center[Image credit: Hype Cycle di Gartner da [Wikipedia](https://it.wikipedia.org/wiki/Hype_cycle)]
+
+---
+
+# Hype Cycle di Gartner
+
+1. Innesco della tecnologia
+
+2. Picco delle aspettative esagerate
+
+3. Depressione della disillusione
+
+4. Salita dell'illuminazione
+
+5. Altopiano della produttività
+
+Dove ci troviamo ora?
+
+---
+
+# 2014
+
+&lt;img src="http://na1.www.gartner.com/imagesrv/newsroom/images/HC_ET_2014.jpg;wadf79d1c8397a49a2" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Statistica &amp; Big Data
+
+* __Cosa sono i Big Data?__
+
+Big Data è la raccolta e l'analisi di insiemi di dati complessi in termini di volume e
+varietà e, in alcuni casi, la velocità con cui vengono raccolti. I Big Data sono particolarmente difficili perché non sono stati raccolti per rispondere ad una specifica __domanda scientifica__
+
+* __Come si affrontano i Big Data? __
+
+I Big Dta richiedono team __multidisciplinari__ per loro stessa natura. Tipicamente richiedono esperti dell'area disciplinare oggetto di studio, esperti informatici, esperti di machine learning. E statistici.
+
+---
+
+# Statistica &amp; Big Data
+
+__Perché è importante che la statistica sia una delle discipline chiave per i Big Data?__
+
+La statistica è fondamentale per garantire che le informazioni estratte dai Big Data siano sensate ed accurate, tenendo in considerazione i seguenti problemi:
+
+* Qualità dei dati e dati mancanti
+
+* Natura osservazionale dei dati
+
+* Quantificazione dell'incertezza delle previsioni, previsioni e modelli
+
+* Gli statistici aiutano a tradurre la questione scientifica in una domanda statistica, che include attentamente
+descrivere la struttura dei dati; il sistema sottostante che ha generato i dati (il modello); e cosa siamo
+cercando di valutare (il parametro oi parametri che vogliamo stimare) o prevedere
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

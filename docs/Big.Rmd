@@ -1,0 +1,883 @@
+---
+title: "Big Data?"
+author: "Aldo Solari"
+date: "20 Novembre, 2018"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r startup, include = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = T, eval=T, message=F, warning=F, error=F, comment=NA, cache=F, R.options=list(width=220))
+```
+
+# Benvenuti!
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '25%', out.height = '25%'}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/it/a/a2/Logo_Universit%C3%A0_Milano-Bicocca.jpg")
+```
+
+---
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '30%', out.height = '30%'}
+knitr::include_graphics("http://divini.gov.it/wp-content/uploads/2016/04/Logo_PLS_scritte_nere.png")
+```
+
+Quest'anno il gruppo di lavoro __PLS - Statistica__
+
+* Prof.ssa Laura Terzera
+
+* Prof. Aldo Solari
+
+* Dott. Roberto Boselli
+
+ha pensato di proporre un __corso di formazione per gli insegnanti__ sul tema:
+
+*Come sopravvivere all'esplosione dei dati.*  <br>
+*Tecniche e strumenti per l'analisi dei Big Data.*
+
+
+---
+
+# Calendario
+
+* __20 Novembre 2018__ - Prof. Aldo Solari <br>
+*10:30-13:30* Introduzione al tema dei Big Data
+
+
+* __26 Novembre 2018__ - Ing. Matteo Fontana <br>
+*10:30-13:30* La visualizzazione di Big Data <br>
+*14:30-17:30* Laboratorio Tableau 
+
+* __28 Novembre 2018__ - Dott. Roberto Boselli <br>
+*10:30-13:30* Trattamento dati non strutturati di tipo testuale  <br>
+*14:30-17:30* Laboratorio Rapidminer Studio 
+
+---
+
+# Il tema di oggi
+
+| Inizio | Fine  | Argomenti |
+|---|---|---|
+| 10:30 | 12:00 | Un diluvio di dati | 
+| | | Cosa sono i Big Data? | 
+| | | A cosa servono i Big Data? |
+| | | Grandi varietà |
+| | | Rise of the machines | 
+| 12:00 | 12:15 | PAUSA |
+| 12:15 | 13:00 | Un paradiso o un paradosso? | 
+| | | Conclusioni |
+
+
+Tutto il materiale è disponibile all'indirizzo
+
+[https://aldosolari.github.io/PLS/Big.html](https://aldosolari.github.io/PLS/Big.html)
+
+---
+
+class: inverse, center, middle
+
+# Un diluvio di dati
+
+---
+
+
+# Un diluvio di dati
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '50%', out.height = '50%'}
+knitr::include_graphics("http://itmonitor.zenoss.com/wp-content/uploads/2013/05/DataDeluge.jpg")
+```
+
+.center[Image credit: [The Economist](https://www.economist.com/leaders/2010/02/25/the-data-deluge), 25 Febbraio 2010]
+
+---
+
+# Ogni minuto 
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://www.aldociana.it/wp-content/uploads/2018/01/web-minuto.jpg")
+```
+
+
+---
+
+
+# Il nuovo petrolio
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '75%', out.height = '75%'}
+knitr::include_graphics("https://www.economist.com/sites/default/files/images/print-edition/20170506_LDD001_0.jpg")
+```
+
+.center[Image credit: [The Economist](https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data), 6 Maggio 2017]
+
+
+
+> La risorsa di più alto valore al mondo non è più il petrolio, sono i dati
+
+
+---
+
+# Big
+
+
+Quando qualcosa è importante, diventa __Big__:
+
+  * __Big Bang__, lo scoppio primordiale che ha dato origine all’universo
+    
+  * __Big Mac__, l’hamburger a doppio strato che delizia gli americani dal 1967
+    
+  * ...
+    
+  * __Big Data__ ?
+
+---
+class: inverse, center, middle
+
+# Cosa sono i Big Data?
+
+---
+
+#  E' solo una questione di dimensioni?
+
+
+| Nome | Simbolo | Byte | 
+|---|---|---|
+| kilobyte | kB | $2^{10} = 1024 \approx 1000$	|
+| megabyte |	MB |	$1000^2$	|
+| gigabyte |	GB |	$1000^3$	|
+| terabyte |	TB |	$1000^4$	|
+| petabyte |	PB |	$1000^5$ |
+| exabyte	| EB	| $1000^6$ |
+| zettabyte |	ZB |	$1000^7$ |
+| yottabyte |	YB |	$1000^8$ |
+
+---
+
+# Definizione classica: le 3 V
+
+* __Volume__ (*Volume*) la dimensione dei dati: quanto grandi?
+
+* __Velocità__ (*Velocity*) il flusso di dati: quanti dati al secondo?
+
+* __Varietà__ (*Variety*) la natura dei dati: in quanti formati? testo, immagini, audio, video etc.
+
+In seguito sono state introdotte una quarta e una quinta V
+
+* __Veridicità__ (*Veracity*), ovvero la qualità dei dati acquisiti
+
+* __Valore__ (*Value*)
+
+---
+
+# Le 4 V
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://www.ibmbigdatahub.com/sites/default/files/styles/xlarge-scaled/public/infographic_image/4-Vs-of-big-data.jpg?itok=4syrvSLX")
+```
+
+.center[Image credit: [IBM Big Data & Analytics Hub](https://www.ibmbigdatahub.com/infographic/four-vs-big-data)]
+
+
+---
+
+# La quinta V
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '30%', out.height = '30%'}
+knitr::include_graphics("https://www.ibmbigdatahub.com/sites/default/files/styles/xlarge-scaled/public/4vs_infographic_final.jpg?itok=XYAq_lSF")
+```
+
+.center[Image credit: [IBM Big Data & Analytics Hub](https://www.ibmbigdatahub.com/infographic/extracting-business-value-4-vs-big-data)]
+
+
+---
+
+# Definizione da Wikipedia
+
+> Big data is a term used to refer to data sets that are __too large or complex__ for traditional data-processing applications software to adequately deal with.
+
+> ...
+
+> What qualifies as being "big data" varies depending on the capabilities of the users and their tools, and expanding capabilities make big data a __moving target__ ...
+
+---
+
+# Definizione relativa
+
+> Big data is when your workflow breaks - Randall Pruim
+
+Per esempio, il mio flusso di lavoro si interrompe se
+
+* la dimensione del dataset è troppo grande per il mio portatile 
+
+* il flusso dei dati è troppo veloce da processare e analizzare
+
+* i dati sono di diversa natura e provengono da diverse sorgenti
+
+* etc.
+
+---
+
+# Definizione provocatoria
+
+![](https://www.unbelievable-machine.com/en/wp-content/uploads/sites/3/2016/03/TUM-PM66-Teenage-2.jpg)
+
+---
+
+class: inverse, center, middle
+
+# Grandi varietà
+
+---
+
+# Tipologie di dati
+
+I Big Data possono essere 
+
+* strutturati 
+* non-strutturati 
+
+e possono venir generati da
+
+* esseri umani
+* macchine
+
+Classificazione *United Nations Economic Commission for Europe* (UNECE):
+
+1. Social Networks (human-sourced information)
+
+2. Traditional Business systems (process-mediated data)
+
+3. Internet of Things (machine-generated data)
+
+---
+
+# Social Networks 
+
+Dati prodotti tramite l'interazione umana con dispositivi digitali (anche
+mobili):
+
+* Social Networks: Facebook, Twitter, Tumblr
+* Blogs and comments
+* Personal documents
+* Pictures: Instagram, Flickr, Picasa ...
+* Video loaded in Youtube
+* Internet searches
+* Mobile data: text messages
+* User-generated maps
+* EMail
+
+---
+
+# Traditional Business systems
+
+Dati raccolti da sistemi tradizionali in modalità passiva:
+
+* Data produced by Public Agencies
+    - medical records
+* Data produced by businesses
+    - commercial transactions
+    - banking/stock records
+    - e-commerce
+    - credit cards
+    
+---
+
+# Internet of Things
+
+Sensori e macchine utilizzati per misurare e
+registrare eventi e situazioni nel mondo fisico 
+
+* Data from sensors
+    - fixed sensors
+          - home automation
+          - weather/pollution sensors
+          - traffic sensors/webcam
+          - scientific sensors
+          - security/surveillance videos/images
+    - mobile sensors (tracking)
+          - mobile phones: calls, position
+          - cars
+          - satellite images
+* Data from computer systems
+    - logs
+    - web logs
+
+---
+
+# Dati alti e grassi
+
+Possiamo pensare ai dati come ad una matrice $n\times p$
+
+* Big $n$: dati "alti"
+
+* Big $p$: dati "grassi"
+
+Il rapporto
+$$\frac{n}{p}$$
+
+può essere interpretato come una misura della dimensione effettiva
+
+[How Big is Big Data?](https://www.bloomberg.com/graphics/2014-fix-this-big-data/)
+
+---
+
+# Da Fisher ...
+
+```{r, echo=FALSE}
+knitr::kable(head(iris), format = "html")
+```
+
+---
+
+# ... a Netflix
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("http://growthmedia.ca/wp-content/uploads/2017/04/lessons-learned-from-building-machine-learning-software-at-netflix.jpg")
+```
+
+---
+
+# ... fino alla Genomica
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://simonsfoundation.imgix.net/wp-content/uploads/sites/2/2015/12/22175530/wholeGenome2440.jpg?auto=format&w=1220&q=90")
+```
+
+---
+
+# GATTACA - 1997
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '30%', out.height = '30%'}
+knitr::include_graphics("https://images-na.ssl-images-amazon.com/images/I/71CruJN2sfL._RI_SX200_.jpg")
+```
+
+__Trama__ : In un prossimo futuro è possibile far nascere esseri umani con un corredo genetico praticamente perfetto
+
+---
+
+
+class: inverse, center, middle
+
+# A cosa servono i Big Data?
+
+---
+
+# A cosa servono i Big Data?
+
+__Personalizzazione__ : la soluzione "giusta" per te si basa su dati di persone "come" te
+
+* Marketing personalizzato
+
+* Medicina personalizzata
+
+* etc.
+
+
+---
+
+# Il valore dei Big Data
+
+
+> Big Data is not about the data!
+
+> The Value in Big Data: the Analytics
+
+> Gary King, 2013
+
+---
+
+# La scienza dei dati
+
+
+> The key word in "Data Science" is not Data, it is Science
+
+> Jeff Leek 
+
+Data Science è utile solo quando i dati vengono utilizzati per rispondere a
+domanda scientifiche
+
+---
+
+class: inverse, center, middle
+
+# Esempi di dati
+
+---
+
+
+# Dati spaziali: dove siamo?
+
+```{r, echo=FALSE}
+library(leaflet)
+m <- leaflet() %>%
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lng=9.213266858982387, lat=45.517198300000004, popup="noi siamo qui") %>% setView(lng=9.213266858982387, lat=45.517198300000004, zoom = 17)
+m  # Print the map
+```
+
+---
+
+# Dati amministrativi: nomi
+
+```{r, echo=FALSE}
+library(mdsr)
+library(babynames)
+BabynamesDist <- make_babynames_dist()
+set.seed(123)
+knitr::kable(head(BabynamesDist[sample(1:nrow(BabynamesDist)),-c(5,7)]), format = "html")
+```
+
+---
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://fivethirtyeight.com/wp-content/uploads/2014/05/silver-feature-anna3.png?w=1150")
+```
+
+
+.center[Image credit: [FiveThirtyEight](https://fivethirtyeight.com/features/how-to-tell-someones-age-when-all-you-know-is-her-name/)]
+
+---
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '70%', out.height = '70%'}
+knitr::include_graphics("https://fivethirtyeight.com/wp-content/uploads/2014/05/silver-feature-most-common-women-names3.png?w=1150")
+```
+
+
+.center[Image credit: [FiveThirtyEight](https://fivethirtyeight.com/features/how-to-tell-someones-age-when-all-you-know-is-her-name/)]
+
+---
+
+# Jhon, Paul, George e Ringo
+
+```{r, echo=FALSE}
+Beatles <- babynames %>% filter(name %in% c("John","Paul","George","Ringo") & sex =="M")
+library(plotly)
+p <- plot_ly(Beatles, x = ~year, y = ~n, color = ~name) %>%
+  add_lines()
+p
+```
+
+
+---
+
+# Dati testuali: word cloud 
+
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://66.media.tumblr.com/2d715b10f0cb6da1d262f6bd23ad935c/tumblr_inline_mnq20epyjM1qz4rgp.png")
+```
+
+---
+
+# Dati testuali: sentiment analysis
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://public.tableau.com/thumb/views/BeatlesSentimentAnalysis/SentimentbyBeatle")
+```
+
+.center[Image credit: [public tableau](https://public.tableau.com/views/BeatlesSentimentAnalysis/SentimentbyBeatle?%3Aembed=y&%3AshowVizHome=no&%3Adisplay_count=y&%3Adisplay_static_image=y)]
+
+
+---
+
+# Dati musicali
+
+```{r, echo=FALSE}
+library(spotifyr)
+beatles <- get_artist_audio_features('the beatles')
+knitr::kable(beatles[c(339:343,352),c(4,11,15,16,24,28)], format = "html")
+```
+
+---
+
+# Dati musicali: sentify
+
+Spotify fornisce una serie di informazioni su brani musicali, ad esempio
+
+* __Energy__ : da 0 a 1, rappresenta una misura percettiva di intensità e attività. In genere, le tracce energetiche si sentono veloci, rumorose e rumorose. Ad esempio, il death metal ha un'energia alta, mentre un preludio di Bach ha un punteggio basso sulla scala. 
+
+*  __Valence__ : da 0 a 1, descrive la positività musicale trasmessa da una traccia. Le tracce con suono ad alta valenza sono più positive (ad esempio, felici, allegre, euforiche), mentre le tracce con valenza bassa suonano più negative (ad esempio, triste, depresso, arrabbiato)
+
+Questa [app](http://rcharlie.net/sentify/) ti consente di visualizzare l'energia e la valenza (positività musicale) di tutti gli artisti e le playlist di Spotify.
+
+Per un confronto fra paesi europei si veda questo [post](http://paulelvers.com/post/emotionsineuropeanmusic/) di Paul Elvers 
+
+
+---
+
+# Dati network: #BankTransferDay
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XX9he5lkNSo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+class: inverse, center, middle
+
+# Rise of the machines
+
+---
+
+# Rise of the machines
+
+```{r, echo=FALSE}
+library(gtrendsR)
+res <- gtrends(keyword = c("Big Data", "Machine Learning"), geo = "", time="all")
+plot(res)
+```
+
+---
+
+# Machine Learning & AI
+
+Qual è la differenza fra Machine Learning (apprendimento automatico) e Intelligenza Artificiale?
+
+* L'intelligenza artificiale è il concetto più ampio di macchine in grado di svolgere compiti in un modo che considereremmo "intelligenti"
+
+* Machine Learning è un'applicazione corrente dell'intelligenza artificiale basata sull'idea che dovremmo davvero essere in grado di dare alle macchine l'accesso ai dati e lasciarli imparare da soli
+
+---
+
+# 1997 - IBM Deep Blue
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '75%', out.height = '75%'}
+knitr::include_graphics("https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA5Mi8xNTYvb3JpZ2luYWwvZ2Fycnkta2FzcGFyb3YtdnMtZGVlcC1ibHVlLmpwZWc=")
+```
+
+---
+
+# 2011 - IBM Watson plays Jeopardy!
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://www.informazionesenzafiltro.it/wp-content/uploads/2016/03/ibm-watson.jpg")
+```
+
+---
+
+# 2013 - Google Deepmind Atari Project
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/E-YinrqWMvs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+#  2016 - Google Deepmind AlphaGo
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://filmperevolvere.it/wp-content/uploads/2018/01/ezgif-4-dafa365d79.jpg
+")
+```
+
+---
+
+# Google DeepMind
+
+* A differenza di Deep Blue o Watson di IBM, che sono stati sviluppati per uno scopo predefinito, DeepMind apprende dai dati
+
+* Tecnicamente utilizza una __rete neurale convoluzionale__ con Q-learning, una forma di *reinforcement learning*
+
+* Senza alterare il codice, DeepMind può imparare altri compiti: è un __general-purpose algorithm__ 
+
+---
+
+class: inverse, center, middle
+
+# Big data: un paradiso o un paradosso?
+
+---
+
+# Il paradiso
+
+* I principali metodi statistici sono giustificati da considerazioni asintotiche, i.e. grandi campioni
+
+* Ad esempio, la Legge dei grandi numeri e il
+il Teorema del limite centrale richiedono grandi campioni
+
+* Con la crescita esplosiva delle dimensioni dei dati, siamo arrivati al paradiso statistico?
+
+---
+
+# Big Data > Metodo Scientifico?
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '75%', out.height = '75%'}
+knitr::include_graphics("https://media.wired.com/photos/5a6bb01fe9c86f511f5e79d6/master/pass/pb_theory_f.jpg
+")
+```
+
+.center[Image credit: [Wired](https://www.wired.com/2008/06/pb-theory/), 23 Giugno 2008]
+
+> The data deluge makes the scientific method — hypothesize, model, test — obsolete.
+
+> Petabytes allow us to say: "Correlation is enough." We can stop looking for models. We can analyze the data without hypotheses about what it might show. We can throw the numbers into the biggest computing clusters the world has ever seen and let statistical algorithms find patterns where science cannot. 
+
+> Chris Anderson
+
+---
+
+# Il paradosso
+
+> The bigger the data, the surer we fool ourselves - X.L. Meng
+
+Più grandi sono i dati, più facile ingannarsi
+
+---
+
+# Le insidie
+
+* 14 Marzo 2014, Lazer et al. per __Science__ :  *The Parable of Google Flu: Traps in Big Data Analysis*
+
+* 28 Marzo 2014, Tim Harford  per __Financial Times__ : *Big data: are we making a big mistake?*
+
+* 3 Novembre 2014, Howard Baldwin per __Forbes__ : *Big Data Is Big, But It's Not That Powerful*
+
+* 18 Ottobre 2017, Alastair Dryburgh per __Forbes__ : *Big Data: Insights Or Illusions?*
+
+* 16 Novembre 2018, Alex Robbio per __Forbes__ : *Are We Nearing The End Of Hadoop And Big Data?*
+
+
+---
+
+class: inverse, center, middle
+
+# Google e l'influenza
+
+---
+
+# La parabola di Google Flu 
+
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '50%', out.height = '50%'}
+knitr::include_graphics("https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fstevensalzberg%2Ffiles%2F2014%2F03%2F670px-symptoms_of_influenza-svg.jpg")
+```
+
+* __Idea__ : Le persone con l'influenza probabilmente vanno online per scoprire come trattarla o per cercare altre informazioni sull'influenza
+
+* __Obiettivo__ : Prevedere epidemie di influenza più velocemente rispetto alle autorità sanitarie tradizionali come i *Centers for Disease Control* (CDC)
+
+---
+
+# Grandi aspettative
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://static01.nyt.com/images/2008/11/12/technology/1112-biz-webFLU.gif")
+```
+
+.center[Image credit: New York Times, 12 Novembre 2008 ]
+
+---
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("http://web.mit.edu/keithw/www/gft-pics/firstyear.png")
+```
+
+---
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("http://web.mit.edu/keithw/www/gft-pics/us.png")
+```
+
+---
+
+# Qualità dei dati?
+
+* Uno dei problemi è che la maggior parte delle persone non sa cosa sia "l'influenza", e fare affidamento sulle ricerche di Google da parte di persone che potrebbero essere completamente all'oscuro dell'influenza non produce informazioni utili
+
+* O per dirla in altro modo, un'enorme collezione di disinformazione non può produrre un piccolo gioiello di vera informazione
+
+---
+
+# Sovra-adattamento ai dati? (Overfitting)
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("http://1.bp.blogspot.com/-EWfYvHcAbsE/URxzj7tEUvI/AAAAAAAAA1E/IDM4PenIIcQ/s1600/i2.png")
+```
+
+---
+
+class: inverse, center, middle
+
+# Le neuroscienze e il salmone
+
+---
+
+# Risonanza magnetica funzionale (fMRI)
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("http://www.ccbi.cmu.edu/images/InScannerSIBR.jpg
+")
+```
+
+---
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '70%', out.height = '70%'}
+knitr::include_graphics("https://static1.squarespace.com/static/571fba899f7266a7171030cf/t/573604d445bf2122c0203fa7/1463158001823/")
+```
+
+---
+
+# Un salmone
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("https://blogs.scientificamerican.com/scicurious-brain/files/2012/09/dead-salmon-fmri1.png
+")
+```
+
+---
+
+# La storia
+
+* Nel 2009, il neuroscienziato Craig Bennett ha condotto uno studio di risonanza magnetica funzionale utilizzando come soggetto un salmone
+
+* Le foto presentate (al salmone) rappresentavano individui (umani) in una serie di situazioni sociali con una specifica valenza emozionale
+
+* Lo studio ha mostrato le risposte diverse dell'attività cerebrale con il variare delle foto e delle diverse situazioni sociali ad impatto emozionale
+
+* Molto improbabile che il cervello di un salmone possa svolgere questi compiti
+
+* Meno che mai il cervello di un salmone morto
+
+---
+
+# La legge dei numeri davvero grandi
+
+
+* Per verificare la presenza di attività celebrale si effettuta un test statistico
+
+* Il test statistico ha una probabilità di errore (individuare attività celebrale quando non c'è) pari a 1 su 1000 
+
+* Siamo stati così sfortunati?
+
+* No, il problema è che dobbiamo effettuare una molteplicità di test: un test per ogni voxel (pixel tridimensionale) 
+
+* Vale quindi __la legge dei numeri veramente grandi__: 
+
+> dato un numero sufficientemente grande di opportunità, ci si può aspettare che accadano eventi altamente improbabili
+
+* Nel nostro contesto
+    - numero di opportunità = 10000 voxel
+    - probabilità di errore = 0.001
+    
+* Il numero atteso di errori è pari a 
+$$10000 \cdot 0.001 = 10$$
+
+---
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '50%', out.height = '50%'}
+knitr::include_graphics("https://www.economist.com/sites/default/files/imagecache/print-cover-full/print-covers/20131019_cna400.jpg")
+```
+
+
+---
+
+# Studi scientifici?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0Rnq1NpHdmw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+# Un nuovo paradigma
+
+__Tradizionale__
+
+1. Formulare le ipotesi/modelli/domande (sulla base di conoscenze pregresse)
+
+2. Raccogliere i dati
+
+3. Rispondere alle domande (inferenza)
+
+
+__Nuovo__
+
+
+1. Raccogliere i dati
+
+2. Formulare le ipotesi/modelli/domande (sulla base dei dati)
+
+3. Rispondere alle domande (inferenza)
+
+
+
+
+
+---
+
+# Science Isn’t Broken
+
+
+It’s just a hell of a lot harder than we give it credit for.
+
+By [Christie Aschwanden](https://fivethirtyeight.com/features/science-isnt-broken/#part1)
+
+
+---
+class: inverse, center, middle
+
+# Conclusioni
+
+---
+
+
+# Big hype?
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '75%', out.height = '75%'}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Gartner_Hype_Cycle.svg/330px-Gartner_Hype_Cycle.svg.png")
+```
+
+.center[Image credit: Hype Cycle di Gartner da [Wikipedia](https://it.wikipedia.org/wiki/Hype_cycle)]
+
+---
+
+# Hype Cycle di Gartner
+
+1. Innesco della tecnologia
+
+2. Picco delle aspettative esagerate
+
+3. Depressione della disillusione
+
+4. Salita dell'illuminazione
+
+5. Altopiano della produttività
+
+Dove ci troviamo ora?
+
+---
+
+# 2014
+
+```{r, echo=FALSE, fig.align = 'center', out.width = '100%', out.height = '100%'}
+knitr::include_graphics("http://na1.www.gartner.com/imagesrv/newsroom/images/HC_ET_2014.jpg;wadf79d1c8397a49a2")
+```
+
+---
+
+# Statistica & Big Data
+
+* __Cosa sono i Big Data?__
+
+Big Data è la raccolta e l'analisi di insiemi di dati complessi in termini di volume e
+varietà e, in alcuni casi, la velocità con cui vengono raccolti. I Big Data sono particolarmente difficili perché non sono stati raccolti per rispondere ad una specifica __domanda scientifica__
+
+* __Come si affrontano i Big Data? __
+
+I Big Dta richiedono team __multidisciplinari__ per loro stessa natura. Tipicamente richiedono esperti dell'area disciplinare oggetto di studio, esperti informatici, esperti di machine learning. E statistici.
+
+---
+
+# Statistica & Big Data
+
+__Perché è importante che la statistica sia una delle discipline chiave per i Big Data?__
+
+La statistica è fondamentale per garantire che le informazioni estratte dai Big Data siano sensate ed accurate, tenendo in considerazione i seguenti problemi:
+
+* Qualità dei dati e dati mancanti
+
+* Natura osservazionale dei dati
+
+* Quantificazione dell'incertezza delle previsioni, previsioni e modelli
+
+* Gli statistici aiutano a tradurre la questione scientifica in una domanda statistica, che include attentamente
+descrivere la struttura dei dati; il sistema sottostante che ha generato i dati (il modello); e cosa siamo
+cercando di valutare (il parametro oi parametri che vogliamo stimare) o prevedere
