@@ -10,7 +10,7 @@ author:
   - name: Laura Terzera
     affiliation: DISMEQ
     affiliation_url: https://www.dismeq.unimib.it/it
-  - name: Stefano Barberis, Alice Giampino, Luca Danese, Pietro Meoni, Samuele Cassinari
+  - name: Paolo Maranzano, Alice Giampino
     affiliation: Tutor
 date: "`r Sys.Date()`"
 output:
@@ -128,36 +128,36 @@ SHOWING A FREE VIZUALIZATION FROM GAPMINDER.ORG, CC-BY LICENSE
 
 <br>
 
-Dal 4 all'8 Febbraio 2019, studenti, familiari e amici delle scuole coinvolte hanno avuto la possibilità di rispondere ad un questionario di dieci domande sulla conoscenza degli aspetti socio-economici del mondo di oggi. 
+<!-- Dal 4 all'8 Febbraio 2019, studenti, familiari e amici delle scuole coinvolte hanno avuto la possibilità di rispondere ad un questionario di dieci domande sulla conoscenza degli aspetti socio-economici del mondo di oggi.  -->
 
-Abbiamo raccolto 645 risposte al questionario. Com'è andata?
+<!-- Abbiamo raccolto 645 risposte al questionario. Com'è andata? -->
 
-[**IL QUESTIONARIO**](docs/questionario.html)
+<!-- [**IL QUESTIONARIO**](docs/questionario.html) -->
 
-Per i risultati dell'esperimento sull'effetto ancoraggio:
+<!-- Per i risultati dell'esperimento sull'effetto ancoraggio: -->
 
-[**L'EFFETTO ANCORAGGIO**](docs/ancoraggio.html)
+<!-- [**L'EFFETTO ANCORAGGIO**](docs/ancoraggio.html) -->
 
-Per le slides:
+<!-- Per le slides: -->
 
-[**SLIDES**](docs/slides.html)
+<!-- [**SLIDES**](docs/slides.html) -->
 
-Per il laboratorio:
+<!-- Per il laboratorio: -->
 
-[**LABORATORIO**](docs/laboratorio.html)
+<!-- [**LABORATORIO**](docs/laboratorio.html) -->
 
 
-# Le scuole coinvolte
+<!-- # Le scuole coinvolte -->
 
-| Scuola | Comune | Studenti partecipanti |
-|---|---|----|
-| Liceo Scientifico E. Amaldi | Alzano Lombardo | 91 |
-| Liceo Scientifico P. Frisi | Monza | 27 |
-| Liceo Scientifico G. Marconi | Milano | 8 |
-| Liceo Scientifico L. Mascheroni | Bergamo | 52  |
-| Istituto di Istruzione Superiore L. Galvani | Milano | 49 |
-| Liceo Classico e Linguistico A. Manzoni | Lecco | 1 |
-| Liceo Scientifico A. Einstein | Milano | 27 |
+<!-- | Scuola | Comune | Studenti partecipanti | -->
+<!-- |---|---|----| -->
+<!-- | Liceo Scientifico E. Amaldi | Alzano Lombardo | 91 | -->
+<!-- | Liceo Scientifico P. Frisi | Monza | 27 | -->
+<!-- | Liceo Scientifico G. Marconi | Milano | 8 | -->
+<!-- | Liceo Scientifico L. Mascheroni | Bergamo | 52  | -->
+<!-- | Istituto di Istruzione Superiore L. Galvani | Milano | 49 | -->
+<!-- | Liceo Classico e Linguistico A. Manzoni | Lecco | 1 | -->
+<!-- | Liceo Scientifico A. Einstein | Milano | 27 | -->
 
 
 # Il PLS di Statistica
