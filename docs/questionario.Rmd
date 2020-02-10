@@ -10,7 +10,7 @@ author:
   - name: Laura Terzera
     affiliation: DISMEQ
     affiliation_url: https://www.dismeq.unimib.it/it
-  - name: Stefano Barberis, Alice Giampino, Luca Danese, Pietro Meoni, Samuele Cassinari
+  - name: Paolo Maranzano, Alice Giampino, Luca Danese, Pietro Meoni, Tommaso Monti e Sara Pigazzini
     affiliation: Tutor
 date: "`r Sys.Date()`"
 output:
@@ -18,6 +18,7 @@ output:
     toc: true
     toc_depth: 1
 ---
+
 
 ```{r startup, include = FALSE, message = FALSE, warning = FALSE}
 knitr::opts_chunk$set(
@@ -33,23 +34,23 @@ library(ggplot2)
 library(plotly)
 library(dplyr)
 library(readr)
-load("dati.Rdata")
+load("dati_2020.Rdata")
 ```
 
-# Scolarizzazione delle bambine nei Paesi a basso reddito
+# Scolarizzazione femminile
 
-1. Attualmente, nei Paesi a basso reddito di tutto il mondo, quante bambine finiscono la scuola primaria? <br>
-    $\Box$ A: 20 per cento <br>
-    $\Box$ B: 40 per cento <br>
-    $\Box$ C: 60 per cento 
+1. Attualmente, a livello globale, gli uomini nella fascia di età da 25 a 34 anni hanno trascorso in media circa 8 anni a scuola. Quanti anni hanno trascorso a scuola le donne nella stessa fascia di età?  <br>
+    $\Box$ A: 7 anni <br>
+    $\Box$ B: 5 anni <br>
+    $\Box$ C: 3 anni 
 
 
 ```{r}
 R1 <- dati %>%
-      group_by(Q1) %>%
+      group_by(Q4) %>%
       summarise (n = n()) %>%
       mutate(perc = round(n *100/ sum(n),1))
-p1 <- ggplot(data=R1, aes(x=Q1, y=perc, 
+p1 <- ggplot(data=R1, aes(x=Q4, y=perc, 
                           text=perc, 
                           fill=c("F","F","T"))) +
       geom_bar(stat="identity") +
@@ -66,7 +67,7 @@ ggplotly(p1,
 
 # Distribuzione del reddito globale
 
-2. Quali delle seguenti curve rappresenta la distribuzione del reddito globale oggi? 
+2. Quali delle seguenti curve rappresenta la distribuzione del reddito globale oggi? <br>
 
 ```{r, echo=FALSE, fig.align = 'center', out.width = '40%', out.height = '40%'}
 knitr::include_graphics("income.jpg")
@@ -75,10 +76,10 @@ knitr::include_graphics("income.jpg")
 
 ```{r}
 R2 <- dati %>%
-      group_by(Q2) %>%
+      group_by(Q6) %>%
       summarise (n = n()) %>%
       mutate(perc = round(n *100/ sum(n),1))
-p2 <- ggplot(data=R2, aes(x=Q2, y=perc, 
+p2 <- ggplot(data=R2, aes(x=Q6, y=perc, 
                           text=perc, 
                           fill=c("F","T","F"))) +
       geom_bar(stat="identity") +
@@ -101,10 +102,10 @@ ggplotly(p2,
     
 ```{r}
 R3 <- dati %>%
-      group_by(Q3) %>%
+      group_by(Q7) %>%
       summarise (n = n()) %>%
       mutate(perc = round(n *100/ sum(n),1))
-p3 <- ggplot(data=R3, aes(x=Q3, y=perc, 
+p3 <- ggplot(data=R3, aes(x=Q7, y=perc, 
                           text=perc, 
                           fill=c("T","F","F"))) +
       geom_bar(stat="identity") +
@@ -120,17 +121,17 @@ ggplotly(p3,
 
 # Durata della vita
 
-4. Qual è l’attuale aspettativa di vita a livello mondiale? <br>
+4. Attualmente l' aspettativa di vita alla nascita nel Regno Unito è di 81 anni. Qual è l'aspettativa di vita alla nascita nel mondo complessivamente? <br>
     $\Box$ A: 50 anni <br>
     $\Box$ B: 60 anni <br>
     $\Box$ C: 70 anni
     
 ```{r}
 R4 <- dati %>%
-      group_by(Q4) %>%
+      group_by(Q3) %>%
       summarise (n = n()) %>%
       mutate(perc = round(n *100/ sum(n),1))
-p4 <- ggplot(data=R4, aes(x=Q4, y=perc, 
+p4 <- ggplot(data=R4, aes(x=Q3, y=perc, 
                           text=perc, 
                           fill=c("F","F","T"))) +
       geom_bar(stat="identity") +
@@ -144,19 +145,19 @@ ggplotly(p4,
         tooltip="text")
 ```
 
-# Futuro numero di bambini
+# Numero medio di figli per donna
 
-5. Oggi, sul pianeta, ci sono 2 miliardi di bambini tra 0 e 15 anni. Quanti ce ne saranno nel 2100, secondo le Nazioni Unite? <br>
-    $\Box$ A: 4 miliardi <br>
-    $\Box$ B: 3 miliardi <br>
-    $\Box$ C: 2 miliardi
+5. Nel 1965, il numero di bambini nati per ogni donna nel mondo, in media, era cinque. Quanto vale oggi? <br>
+    $\Box$ A: 2.5 <br>
+    $\Box$ B: 3.5 <br>
+    $\Box$ C: 4.5
     
 ```{r}
 R5 <- dati %>%
-      group_by(Q5) %>%
+      group_by(Q8) %>%
       summarise (n = n()) %>%
       mutate(perc = round(n *100/ sum(n),1))
-p5 <- ggplot(data=R5, aes(x=Q5, y=perc, 
+p5 <- ggplot(data=R5, aes(x=Q8, y=perc, 
                           text=perc, 
                           fill=c("T","F","F"))) +
       geom_bar(stat="identity") +
@@ -170,70 +171,22 @@ ggplotly(p5,
         tooltip="text")
 ```
 
-**Approfondimento di Luca**
 
-La risposta modale è stata “3 miliardi”, mentre la risposta corretta era quella scelta di meno, cioè “2 miliardi”.
+# Tasso di alfabetizzazione
 
-L’idea generale è che la popolazione mondiale sia in costante aumento, dunque è giustificabile pensare che anche il numero di bambini sia in crescita Per questo, partendo dal dato iniziale fornito dalla domanda (cioè che oggi i bambini tra 0 e 10 anni sono 2 miliardi), la risposta si è concentrata su valori più grandi di 2 miliardi.
-
-```{r}
-
-data1 <- read.csv("population_aged_0_4_years_total_number.csv")
-data2 <- read.csv("population_aged_5_9_years_total_number.csv")
-data3 <- read.csv("population_aged_10_14_years_total_number.csv")
-
-data1[is.na(data1)] <- 0
-data2[is.na(data1)] <- 0
-data3[is.na(data1)] <- 0
-
-a1 = colSums(data1[2:152])
-b1 = colSums(data2[2:152])
-c1 = colSums(data3[2:152])
-
-somme = c(a1 + b1 + c1)
-
-somme_nona <- na.omit(somme)
-somme = as.numeric(somme)
-
-
-today <- Sys.Date()
-tm <- seq(1950, 2100, by = 5)
-x <- tm
-y <- somme_nona
-
-x_label <- list(
-  title = "Anni"
-)
-y_label <- list(
-  title = "Numerosità Popolazione"
-)
-
-p <- plot_ly(x = ~x, y = ~y, mode = 'lines+markers') %>%
-  layout(xaxis = x_label, yaxis = y_label)
-p
-
-
-```
-
-La serie storica qui riportata mostra il numero di bambini tra 0 e 15 anni nel mondo negli anni che vanno fino ad oggi e la rispettiva proiezione fino al 2100. Ad oggi il numero di bambini in questa fascia d’età è pari a 2 miliardi circa. Il grafico mostra che da qui al 2100 questo numero rimarrà praticamente invariato.
-
-Perchè nonostante la popolazione tenda ad aumentare (secondo le stime delle Nazioni Unite nel 2100 saremo 11.2 miliardi), il numero di bambini tra i 0 e 15 anni rimane invariato? Perchè la popolazione invecchierà notevolmente, e dunque aumenterà, lasciando però invariato il numero di giovani.
-
-# Animali in via d'estinzione
-
-6. Nel 1996 la tigre, il panda gigante e il rinoceronte nero erano considerati in via d’estinzione. Quante di queste tre specie si trovano oggi in pericolo ancora più grave? <br>
-    $\Box$ A: tutte e tre <br>
-    $\Box$ B: una <br>
-    $\Box$ C: nessuna
+6. Qual è la percentuale di adulti nel mondo di oggi che sono in grado di leggere e scrivere? <br>
+    $\Box$ A: 80\% <br>
+    $\Box$ B: 60\% <br>
+    $\Box$ C: 40\%
     
 ```{r}
 R6 <- dati %>%
-      group_by(Q6) %>%
+      group_by(Q2) %>%
       summarise (n = n()) %>%
       mutate(perc = round(n *100/ sum(n),1))
-p6 <- ggplot(data=R6, aes(x=Q6, y=perc, 
+p6 <- ggplot(data=R6, aes(x=Q2, y=perc, 
                           text=perc, 
-                          fill=c("T","F","F"))) +
+                          fill=c("F","F","T"))) +
       geom_bar(stat="identity") +
       geom_hline(yintercept=33.33) +
       ylab("Percentuale") +
@@ -247,17 +200,17 @@ ggplotly(p6,
 
 # Catastrofi naturali
 
-7. Com’è cambiato, nell’ultimo secolo, il numero annuale di decessi dovuti a calamità naturali? <br>
-    $\Box$ A: è più che raddoppiato <br>
-    $\Box$ B: è rimasto pressoché invariato <br>
-    $\Box$ C: si è più che dimezzato
+7. Come è cambiato il numero di morti all'anno dovuti a disastri naturali negli ultimi cento anni? <br>
+    $\Box$ A: Ridotto a meno della metà <br>
+    $\Box$ B: Più che raddoppiato <br>
+    $\Box$ C: E' rimasto più o meno lo stesso
 
 ```{r}
 R7 <- dati %>%
-      group_by(Q7) %>%
+      group_by(Q9) %>%
       summarise (n = n()) %>%
       mutate(perc = round(n *100/ sum(n),1))
-p7 <- ggplot(data=R7, aes(x=Q7, y=perc, 
+p7 <- ggplot(data=R7, aes(x=Q9, y=perc, 
                           text=perc, 
                           fill=c("F","F","T"))) +
       geom_bar(stat="identity") +
@@ -273,17 +226,17 @@ ggplotly(p7,
 
 # Dove vivono le persone
 
-8. Oggi la popolazione mondiale ammonta a circa 7 miliardi. Quale carta geografica rispecchia meglio la loro distribuzione? (Ciascuna figura rappresenta 1 miliardo di persone.)
+8. Attualmente, ci sono circa 7 miliardi di persone nel mondo. Delle mappa qui sotto, quale pensi sia la rappresentazione migliore del numero di persone che vivono nelle Americhe, in Europa, in Africa e in Asia? (Ciascuna figura rappresenta 1 miliardo di persone.) <br>
 
 ![](https://s3-eu-west-1.amazonaws.com/static.gapminder.org/GapminderMedia/wp-uploads/20170330195501/Results-for-the-Swedish-Public-on-the-Gapminder-Test-2017%E2%80%99.jpg)
 
 
 ```{r}
 R8 <- dati %>%
-      group_by(Q8) %>%
+      group_by(Q1) %>%
       summarise (n = n()) %>%
       mutate(perc = round(n *100/ sum(n),1))
-p8 <- ggplot(data=R8, aes(x=Q8, y=perc, 
+p8 <- ggplot(data=R8, aes(x=Q1, y=perc, 
                           text=perc, 
                           fill=c("T","F","F"))) +
       geom_bar(stat="identity") +
@@ -299,17 +252,17 @@ ggplotly(p8,
 
 # Vaccinazione dei bambini
 
-9. Attualmente, nel mondo, quanti bambini di 1 anno sono stati vaccinati contro qualche malattia? <br>
+9. Attualmente, a livello globale, qual è la percentuale di bambini con un anno di età che sono stati vaccinati contro il morbillo? <br>
     $\Box$ A: 20 per cento <br>
     $\Box$ B: 50 per cento <br>
     $\Box$ C: 80 per cento
 
 ```{r}
 R9 <- dati %>%
-      group_by(Q9) %>%
+      group_by(Q5) %>%
       summarise (n = n()) %>%
       mutate(perc = round(n *100/ sum(n),1))
-p9 <- ggplot(data=R9, aes(x=Q9, y=perc, 
+p9 <- ggplot(data=R9, aes(x=Q5, y=perc, 
                           text=perc, 
                           fill=c("F","F","T"))) +
       geom_bar(stat="identity") +
@@ -364,9 +317,9 @@ Come si può vedere la curva relativa alla percentuale mondiale di bambini vacci
 # Elettricità
 
 10. Quante persone al mondo hanno accesso all'elettricità? <br>
-    $\Box$ A: 20 per cento <br>
-    $\Box$ B: 50 per cento <br>
-    $\Box$ C: 80 per cento
+    $\Box$ A: 20 \% <br>
+    $\Box$ B: 50 \% <br>
+    $\Box$ C: 80 \% 
 
 ```{r}
 R10 <- dati %>%

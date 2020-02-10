@@ -10,7 +10,7 @@ author:
   - name: Laura Terzera
     affiliation: DISMEQ
     affiliation_url: https://www.dismeq.unimib.it/it
-  - name: Stefano Barberis, Alice Giampino, Luca Danese, Pietro Meoni, Samuele Cassinari
+  - name: Paolo Maranzano, Alice Giampino, Luca Danese, Pietro Meoni, Tommaso Monti e Sara Pigazzini
     affiliation: Tutor
 date: "`r Sys.Date()`"
 output:
@@ -34,7 +34,7 @@ library(ggplot2)
 library(plotly)
 library(dplyr)
 library(readr)
-load("dati.Rdata")
+load("dati_2020.Rdata")
 ```
 
 # Il concetto di Euristica
@@ -56,9 +56,9 @@ Negli scorsi decenni, nella psicologia cognitiva sono state individuate diverse 
 * Euristica dell'ancoraggio: se si deve dare una stima di probabilità di un evento, essa è sistematicamente influenzata da un termine di paragone. Questo tipo di euristica descrive la comune tendenza umana a fare troppo affidamento sulle prime informazioni che si trovano (“anchor, ancora”) quando si cerca di prendere una decisione. Ovvero, l'uomo sembra utilizzare ogni informazione resa intenzionalmente disponibile nel processo della presa delle decisioni, secondo strategie di riduzione della distanza (mediazione) da quanto comunicatogli, anche se oggettivamente non pertinente con il problema.
 
 
-# Euristica dell'ancoraggio nel questionario PLS 2019
+# Euristica dell'ancoraggio nel questionario PLS 2020
 
-Con il progetto PLS, è stato proposto di rispondere ad un questionario in cui era contenuta una serie di domande di conoscenza su alcuni fenomeni, più una serie di domande adatte a studiare il fenomeno dell'euristica dell'ancoraggio. In particolare, le domande in cui si è deciso di analizzare questo fenomeno erano 3, la prima sul numero di nazioni africane rappresentate nell'Organizzazione delle Nazioni Unite, la seconda sul prezzo di un'automobile tedesca ed infine, si è chiesta l'età in cui è mort Gandhi. Nel dettaglio, le domande sono state così organizzate:
+Con il progetto PLS, è stato proposto di rispondere ad un questionario in cui era contenuta una serie di domande di conoscenza su alcuni fenomeni, più una serie di domande adatte a studiare il fenomeno dell'euristica dell'ancoraggio. In particolare, le domande in cui si è deciso di analizzare questo fenomeno erano 3, la prima sul numero di nazioni africane rappresentate nell'Organizzazione delle Nazioni Unite, la seconda sul prezzo di un'automobile tedesca ed infine, si è chiesta l'età in cui è morto Gandhi. Nel dettaglio, le domande sono state così organizzate:
 
 Percentuale di nazioni africane nell'ONU:
 
@@ -82,15 +82,15 @@ Nelle sezioni successive, attraverso una semplice analisi statistica dei dati, s
 
 # Percentuale di nazioni africane nell'ONU
 
-Come si può osservare nella figura seguente, coloro che hanno le ultime due cifre del numero di telefono mediamente pari a 27 hanno detto che il numero di nazione africane nell'ONU è "maggiore" del numero che hanno appena scritto; viceversa coloro che hanno le ultime due cifre del numero di telefono mediamente pari a 59 hanno detto che il numero di nazioni nell'ONU è inferiore.
+Come si può osservare nella figura seguente, coloro che hanno le ultime due cifre del numero di telefono mediamente pari a 31 hanno detto che il numero di nazione africane nell'ONU è "maggiore" del numero che hanno appena scritto; viceversa coloro che hanno le ultime due cifre del numero di telefono mediamente pari a 56 hanno detto che il numero di nazioni nell'ONU è inferiore.
 
 ```{r}
 dati$ONUcifre <- ifelse(dati$ONUcifre=="Si","maggiore","minore")
-aggregate(cifre~ONUcifre,dati,mean)
+aggregate(cifre ~ ONUcifre,dati,mean)
 ```
 
 ```{r}
-plot_ly(dati, y = ~cifre, color = ~ONUcifre) %>% add_boxplot(x = ~ONUcifre) %>%
+plot_ly(dati, y = ~ cifre, color = ~ ONUcifre) %>% add_boxplot(x = ~ONUcifre) %>%
   layout(title = "",xaxis = list(title = ""),yaxis = list(title = "Ultime due cifre del numero di telefono"))
 ```
 
@@ -102,7 +102,7 @@ plot_ly(data = dati) %>% add_markers(x = ~cifre, y = ~ONU) %>%  add_trace(x = lo
 
 # Prezzo di un'automobile tedesca 
 
-Con questa domanda emerge in modo ancora più evidente l'effetto dell'ancoraggio. Come si può osservare dalla rappresentazione se il valore di riferimento specificato nel quesito era pari a 20.000 euro il prezzo medio specificato dai rispondenti è risultato pari a 26500 euro circa; viceversa quando il valore di riferimento era pari a 100.000 euro allora il prezzo medio è risultato essere pari a circa 47500 euro.
+Con questa domanda emerge in modo ancora più evidente l'effetto dell'ancoraggio. Come si può osservare dalla rappresentazione se il valore di riferimento specificato nel quesito era pari a 20.000 euro il prezzo medio specificato dai rispondenti è risultato pari a 27700 euro circa; viceversa quando il valore di riferimento era pari a 100.000 euro allora il prezzo medio è risultato essere pari a circa 48300 euro.
 
 Considerando ad esempio un'altra variabile, ovvero il sesso dei rispondenti, sembra che questa dimensione non sia così importante come la versione del questionario (e quindi l'effetto ancoraggio) nello spiegare la variabilità elevata nelle risposte.
 
@@ -124,7 +124,7 @@ plot_ly(dati, y = ~auto, color = ~sesso) %>% add_boxplot(x = ~sesso) %>%
 
 # Domanda sull'età di Gandhi
 
-Analoghe considerazioni valgono per l'età di Gandhi. Quando il valore di riferimento è pari a 35 anni l'età media alla sua morte, per i rispondenti al questionario, è risultata pari a 68 anni, mentre per i casi in cui il valore di riferimento è pari a 114 anni l'età media è risultata pari a 82 anni, a fronte di 79 anni che è l'età che aveva Gandhi alla sua morte.
+Analoghe considerazioni valgono per l'età di Gandhi. Quando il valore di riferimento è pari a 35 anni l'età media alla sua morte, per i rispondenti al questionario, è risultata pari a 65 anni, mentre per i casi in cui il valore di riferimento è pari a 114 anni l'età media è risultata pari a 80 anni, a fronte di 79 anni che è l'età che aveva Gandhi alla sua morte.
 
 Anche in questo caso, la variabile sesso come la variabile che codifica l'età dei rispondenti in due gruppi (>1998, e <1998), non spiega la variabilità nelle risposte circa l'età di Gandhi alla sua morte.
 

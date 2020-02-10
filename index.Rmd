@@ -10,7 +10,7 @@ author:
   - name: Laura Terzera
     affiliation: DISMEQ
     affiliation_url: https://www.dismeq.unimib.it/it
-  - name: Paolo Maranzano, Alice Giampino
+  - name: Paolo Maranzano, Alice Giampino, Pietro Meoni, Luca Danese, Tommaso Monti, Sara Pigazzini
     affiliation: Tutor
 date: "`r Sys.Date()`"
 output:
@@ -21,7 +21,7 @@ output:
 
 
 
-# La visione del mondo basata sui fatti
+# Come va il mondo? La risposta dei numeri
 
 Il laboratorio di quest'anno prevede:
 
@@ -32,20 +32,6 @@ interpretare un fenomeno di interesse sulla base dei dati;
 
 * l'analisi dell'effetto ancoraggio. 
 
-Secondo Carlo Rovelli
-
-> Ragionamenti di tipo probabilistico e statistico sono uno strumento della ragione, potente e affilato. 
-Non disporne ci lascia indifesi. 
-Non avere chiarezza su nozioni come media, varianza, fluttuazioni e correlazioni è un pò come non sapere usare la moltiplicazione o la divisione. 
-
-<aside>
-Estratto da "Domenica" del "Sole 24 Ore", 20 Gennaio 2013. Tutti i diritti riservati.
-</aside>
-
-Tuttavia i numeri non bastano da soli. Il mondo non si può capire senza numeri né soltanto con i numeri: 
-
-> In questo mondo incerto, chiedere certezze assolute è una sciocchezza.  Chi esibisce risposte certe è di solito il meno affidabile. 
-Ma non per questo siamo nel buio. Fra certezza e totale incertezza vi è un prezioso spazio intermedio, ed è in questo spazio intermedio che si svolgono la nostra vita e il nostro pensiero.
 
 Il laboratorio di quest’anno fa riferimento al libro *Factfulness*, sottotitolo:
 *Dieci ragioni per cui non capiamo il mondo e perché le cose vanno
@@ -62,13 +48,6 @@ embed_url("https://www.youtube.com/watch?v=5uooRe07mYM")
 Video pubblicato il 3 Aprile 2018 su **gatesnotes**: The blog of Bill Gates.
 </aside>
 
-Hans Rosling è stato un medico, statistico e accademico svedese. Membro dell’Accademia
-di Svezia e del Karolinska Institutet, fondatore della sezione svedese
-di Medici senza frontiere e infine della fondazione Gapminder, ha vissuto
-vent’anni in Congo per studiare e combattere il konzo, una malattia
-epidemica paralizzante.
-
-# Le statistiche come terapia
 
 Per comprendere in modo efficace lo sviluppo socio-economico mondiale bisogna saper leggere i dati.
 Tutti parlano di come va il mondo, ma è raro vederlo fare con la forza dei numeri.
@@ -81,83 +60,32 @@ Rosling ci insegna ad avere una visione costruttiva del mondo, in cui il futuro 
 Estratto dal libro **Factfulness**, Rizzoli.
 </aside>
 
-Nel libro *Factfulness*, Rosling presenta la *Carta della Salute Mondiale*.
-Questo grafico è una sorta di mappa mondiale per la salute e la ricchezza. I punti cardinali Nord e Sud stanno per sani e malati. Est e Ovest stanno per ricchi e poveri.  
 
-Ogni Paese è rappresentato da una bolla, grande in relazione alla sua dimensione (numero di persone); la salute è misurata in termini di aspettativa di vita alla nascita (in anni), mentre la ricchezza è misurata come reddito pro capite, in dollari per anno adeguati all'inflazione.
+# Il nostro questionario
 
-Provate a cercare il vostro Paese per vedere chi sono i Paesi vicini con reddito e salute simili, e osservare l'evoluzione nel tempo:
+Dal 27 Gennaio al 2 Febbraio 2020, studenti, familiari e amici delle scuole coinvolte hanno avuto la possibilità di rispondere al nostro questionario.
 
-<head>
+Abbiamo raccolto 561 risposte. Com'è andata?
 
-<link rel="stylesheet" href="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/vizabi/develop/vizabi.css">
-<link rel="stylesheet" href="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/bubblechart.css">
+[**IL QUESTIONARIO**](docs/questionario.html)
 
-<script src="//d3js.org/d3.v4.min.js"></script>
-<script src="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/vizabi/develop/vizabi.min.js"></script>
-<script src="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/preview/master/assets/vendor/js/vizabi-ws-reader/vizabi-ws-reader.js"></script>
-<script src="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/systema-globalis/master/ConfigBubbleChart.js"></script>
-<script src="//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/bubblechart.js"></script>
+Per i risultati dell'esperimento sull'effetto ancoraggio:
 
-</head>
-<body>
-<div id="placeholder" width="600px" height="400px"></div>
+[**L'EFFETTO ANCORAGGIO**](docs/ancoraggio.html)
 
-<script>
-var wsReader = WsReader.WsReader.getReader();
-Vizabi.Reader.extend("waffle", wsReader);
+Per le slides:
 
-ConfigBubbleChart.locale = {
-  "id": "en",
-  "filePath": "//s3-eu-west-1.amazonaws.com/static.gapminderdev.org/vizabi/develop/assets/translation/"
-};
-
-ConfigBubbleChart.data = {
-  "reader": "waffle",
-  "path": "https://waffle-server-dev.gapminderdev.org/api/ddf/ql"
-};
-
-Vizabi("BubbleChart", document.getElementById("placeholder"), ConfigBubbleChart);
-</script>
-
-</body>
-
-<aside>
-SHOWING A FREE VIZUALIZATION FROM GAPMINDER.ORG, CC-BY LICENSE
-</aside>
-
-<br>
-
-<!-- Dal 4 all'8 Febbraio 2019, studenti, familiari e amici delle scuole coinvolte hanno avuto la possibilità di rispondere ad un questionario di dieci domande sulla conoscenza degli aspetti socio-economici del mondo di oggi.  -->
-
-<!-- Abbiamo raccolto 645 risposte al questionario. Com'è andata? -->
-
-<!-- [**IL QUESTIONARIO**](docs/questionario.html) -->
-
-<!-- Per i risultati dell'esperimento sull'effetto ancoraggio: -->
-
-<!-- [**L'EFFETTO ANCORAGGIO**](docs/ancoraggio.html) -->
-
-<!-- Per le slides: -->
-
-<!-- [**SLIDES**](docs/slides.html) -->
-
-<!-- Per il laboratorio: -->
-
-<!-- [**LABORATORIO**](docs/laboratorio.html) -->
+[**SLIDES**](docs/slides_pls2020.pdf)
 
 
-<!-- # Le scuole coinvolte -->
+# Le scuole coinvolte
 
-<!-- | Scuola | Comune | Studenti partecipanti | -->
-<!-- |---|---|----| -->
-<!-- | Liceo Scientifico E. Amaldi | Alzano Lombardo | 91 | -->
-<!-- | Liceo Scientifico P. Frisi | Monza | 27 | -->
-<!-- | Liceo Scientifico G. Marconi | Milano | 8 | -->
-<!-- | Liceo Scientifico L. Mascheroni | Bergamo | 52  | -->
-<!-- | Istituto di Istruzione Superiore L. Galvani | Milano | 49 | -->
-<!-- | Liceo Classico e Linguistico A. Manzoni | Lecco | 1 | -->
-<!-- | Liceo Scientifico A. Einstein | Milano | 27 | -->
+| Scuola | Comune | Studenti partecipanti |
+|---|---|----|
+| Liceo Scientifico E. Amaldi | Alzano Lombardo (BG) | 66 |
+| Liceo Scientifico P. Frisi | Monza (MB) | 60 |
+| Liceo Scientifico-Tecnologico G. Galilei | Crema (CR) | 13 |
+| Liceo Scientifico A. Einstein | Milano (MI) | 88 |
 
 
 # Il PLS di Statistica
